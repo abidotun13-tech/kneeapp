@@ -12,7 +12,7 @@
 :root{
   --bg:#EFF3F0; --surface:#FFFFFF; --ink:#101A22; --muted:#5D6B74;
   --line:#DCE4DF; --pitch:#0B7A46; --pitch-soft:#E4F1EA;
-  --green:#1E8E4E; --amber:#C87A00; --red:#C0392B;
+  --green:#1E8E4E; --amber:#C87A00; --red:#C0392B; --ice:#2E6FA8; --ice-soft:#E4EEF7;
   --sans:system-ui,"Roboto","Helvetica Neue",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
   --nav:calc(60px + env(safe-area-inset-bottom));
@@ -21,246 +21,245 @@
   :root{
     --bg:#0E1512; --surface:#18211C; --ink:#E8EEE9; --muted:#94A29A;
     --line:#26332C; --pitch:#3DBB77; --pitch-soft:#16291F;
-    --green:#3DBB77; --amber:#E2A03A; --red:#E2685B;
+    --green:#3DBB77; --amber:#E2A03A; --red:#E2685B; --ice:#6FB0E0; --ice-soft:#152430;
   }
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
-body{
-  background:var(--bg); color:var(--ink); font-family:var(--sans);
-  font-size:16px; line-height:1.5; overscroll-behavior-y:contain;
-}
-main{padding:14px 16px calc(var(--nav) + 24px); max-width:560px; margin:0 auto}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;overscroll-behavior-y:contain}
+main{padding:14px 16px calc(var(--nav) + 24px);max-width:560px;margin:0 auto}
 .screen{display:none}
-.screen.on{display:block; animation:in .18s ease-out}
+.screen.on{display:block;animation:in .18s ease-out}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-
-.top{display:flex; align-items:baseline; justify-content:space-between; padding:8px 2px 14px}
-.top h1{font-size:19px; font-weight:800; letter-spacing:-.02em; margin:0}
-.top .date{font-size:13px; color:var(--muted)}
-
-.card{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:18px; margin-bottom:14px}
-h2{font-size:17px; font-weight:800; letter-spacing:-.015em; margin:0 0 4px}
-h3{font-size:13px; font-weight:700; color:var(--muted); margin:0 0 10px}
-p{margin:0 0 12px}
-p:last-child{margin-bottom:0}
-.sub{color:var(--muted); font-size:14px}
-
-/* score */
+.top{display:flex;align-items:baseline;justify-content:space-between;padding:8px 2px 14px}
+.top h1{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0}
+.top .date{font-size:13px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+h2{font-size:17px;font-weight:800;letter-spacing:-.015em;margin:0 0 4px}
+h3{font-size:13px;font-weight:700;color:var(--muted);margin:0 0 10px}
+p{margin:0 0 12px}p:last-child{margin-bottom:0}
+.sub{color:var(--muted);font-size:14px}
 .knee{margin-bottom:18px}
-.knee:last-of-type{margin-bottom:6px}
-.kneehead{display:flex; align-items:center; justify-content:space-between; margin-bottom:2px}
+.kneehead{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
 .kneehead b{font-size:15px}
-.val{font-size:34px; font-weight:800; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.03em}
-input[type=range]{
-  -webkit-appearance:none; appearance:none; width:100%; height:44px;
-  background:transparent; margin:0;
-}
-input[type=range]::-webkit-slider-runnable-track{height:10px; border-radius:6px; background:var(--line)}
-input[type=range]::-moz-range-track{height:10px; border-radius:6px; background:var(--line)}
-input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none; width:34px; height:34px; border-radius:50%;
-  background:var(--surface); border:3px solid currentColor; margin-top:-12px;
-  box-shadow:0 1px 4px rgba(0,0,0,.18);
-}
-input[type=range]::-moz-range-thumb{
-  width:34px; height:34px; border-radius:50%; background:var(--surface);
-  border:3px solid currentColor; box-shadow:0 1px 4px rgba(0,0,0,.18);
-}
-.ticks{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:-4px}
-
-.chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:4px}
-.chip{
-  border:1px solid var(--line); background:transparent; color:var(--ink);
-  border-radius:999px; padding:9px 14px; font-size:14px; font-family:inherit; cursor:pointer;
-}
-.chip.on{background:var(--pitch-soft); border-color:var(--pitch); color:var(--pitch); font-weight:700}
-
-.btn{
-  width:100%; border:none; border-radius:16px; background:var(--pitch); color:#fff;
-  font-family:inherit; font-size:16px; font-weight:700; padding:16px; cursor:pointer;
-  min-height:52px;
-}
+.val{font-size:34px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:6px;background:var(--line)}
+input[type=range]::-moz-range-track{height:10px;border-radius:6px;background:var(--line)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:var(--surface);border:3px solid currentColor;margin-top:-12px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+input[type=range]::-moz-range-thumb{width:34px;height:34px;border-radius:50%;background:var(--surface);border:3px solid currentColor;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:-4px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 14px;font-size:14px;font-family:inherit;cursor:pointer}
+.chip.on{background:var(--pitch-soft);border-color:var(--pitch);color:var(--pitch);font-weight:700}
+.btn{width:100%;border:none;border-radius:16px;background:var(--pitch);color:#fff;font-family:inherit;font-size:16px;font-weight:700;padding:16px;cursor:pointer;min-height:52px}
 .btn:active{transform:scale(.99)}
-.btn.ghost{background:transparent; color:var(--pitch); border:1.5px solid var(--pitch)}
-.btn:focus-visible,.chip:focus-visible,.tab:focus-visible{outline:3px solid var(--pitch); outline-offset:2px}
-
-/* verdict */
-.verdict{border-left:6px solid var(--line); border-radius:16px; padding:16px 16px 16px 14px; background:var(--surface); border-top:1px solid var(--line); border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
+.btn.ghost{background:transparent;color:var(--pitch);border:1.5px solid var(--pitch)}
+.btn.ice{background:var(--ice)}
+.btn:focus-visible,.chip:focus-visible,.tab:focus-visible,.tick:focus-visible{outline:3px solid var(--pitch);outline-offset:2px}
+.verdict{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:16px;padding:16px 16px 16px 14px;background:var(--surface);margin-bottom:14px}
 .verdict.green{border-left-color:var(--green)}
 .verdict.amber{border-left-color:var(--amber)}
 .verdict.red{border-left-color:var(--red)}
-.verdict .tag{font-size:12px; font-weight:800; letter-spacing:.06em}
+.verdict .tag{font-size:12px;font-weight:800;letter-spacing:.06em}
 .verdict.green .tag{color:var(--green)}
 .verdict.amber .tag{color:var(--amber)}
 .verdict.red .tag{color:var(--red)}
 .verdict h2{margin:2px 0 6px}
-
-/* strip + chart */
-.strip{display:grid; grid-template-columns:repeat(7,1fr); gap:6px}
-.day{aspect-ratio:1/1.05; border-radius:10px; background:var(--line); display:flex; align-items:flex-end; justify-content:center; font-size:11px; color:var(--muted); padding-bottom:4px}
-.day.green{background:var(--green); color:#fff}
-.day.amber{background:var(--amber); color:#fff}
-.day.red{background:var(--red); color:#fff}
-svg{display:block; width:100%; height:auto}
-.legend{display:flex; gap:14px; font-size:12.5px; color:var(--muted); margin-top:8px}
+.today-hero{background:var(--pitch-soft);border:1px solid var(--pitch);border-radius:20px;padding:16px 18px;margin-bottom:14px}
+.today-hero .lab{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--pitch)}
+.today-hero h2{margin:3px 0 4px;font-size:19px}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{aspect-ratio:1/1.05;border-radius:10px;background:var(--line);display:flex;align-items:flex-end;justify-content:center;font-size:11px;color:var(--muted);padding-bottom:4px}
+.day.green{background:var(--green);color:#fff}
+.day.amber{background:var(--amber);color:#fff}
+.day.red{background:var(--red);color:#fff}
+svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
 .sw{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
-
-.stat{display:flex; gap:10px}
-.stat > div{flex:1; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:14px}
-.stat b{display:block; font-size:26px; font-weight:800; letter-spacing:-.02em; line-height:1.1}
-.stat span{font-size:12.5px; color:var(--muted)}
-
-/* ramp */
-.rung{display:flex; gap:12px; padding:12px 0; border-top:1px solid var(--line)}
-.rung:first-of-type{border-top:none}
-.rung .n{width:28px;height:28px;border-radius:50%;background:var(--line);color:var(--muted);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.rung.now .n{background:var(--pitch); color:#fff}
-.rung.done .n{background:var(--pitch-soft); color:var(--pitch)}
-.rung .t{font-size:14.5px}
-.rung.now .t b{color:var(--pitch)}
-.bar{height:9px; border-radius:6px; background:var(--line); overflow:hidden; margin:8px 0 6px}
-.bar i{display:block; height:100%; background:var(--pitch)}
-
-/* timer */
-.timer{text-align:center; padding:6px 0 2px}
-.clock{font-size:56px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.04em; line-height:1}
-.reps{font-size:13px; color:var(--muted); margin-bottom:12px}
-
-/* why */
-.prose{font-family:var(--serif); font-size:16.5px; line-height:1.62}
-.cap{font-size:14px; border-left:4px solid var(--pitch); padding-left:11px; min-height:78px}
-.cap b{display:block; font-size:12.5px; color:var(--pitch); margin-bottom:2px}
-.flag{border:1.5px solid var(--red); border-radius:16px; padding:14px; background:transparent}
+.stat{display:flex;gap:10px;margin-bottom:14px}
+.stat > div{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:6px 0 12px}
+.wd{border:1px solid var(--line);border-radius:12px;padding:8px 3px;text-align:center;font-size:11px;color:var(--muted)}
+.wd b{display:block;font-size:12px;color:var(--ink);margin-bottom:3px}
+.wd.train{background:var(--pitch-soft);border-color:var(--pitch)}
+.wd.train b{color:var(--pitch)}
+.wd.match{background:var(--pitch);border-color:var(--pitch)}
+.wd.match b,.wd.match{color:#fff}
+.wd.now{outline:2.5px solid var(--ink);outline-offset:1px}
+.count{display:flex;align-items:baseline;gap:8px}
+.count b{font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.bar{height:9px;border-radius:6px;background:var(--line);overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;background:var(--pitch)}
+.bar i.ice{background:var(--ice)}
+.ex{border-top:1px solid var(--line);padding:14px 0}
+.ex:first-of-type{border-top:none;padding-top:2px}
+.exhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.exhead b{font-size:15.5px}
+.exhead span{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.clock{font-size:52px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:1;text-align:center}
+.phase{text-align:center;font-size:13px;color:var(--muted);margin:4px 0 12px}
+.tick{display:flex;align-items:center;gap:12px;width:100%;background:transparent;border:1px solid var(--line);border-radius:16px;padding:14px;font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer;text-align:left}
+.tick .box{width:24px;height:24px;border-radius:8px;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff}
+.tick.on{background:var(--pitch-soft);border-color:var(--pitch)}
+.tick.on .box{background:var(--pitch);border-color:var(--pitch)}
+.tick.on.ice{background:var(--ice-soft);border-color:var(--ice)}
+.tick.on.ice .box{background:var(--ice);border-color:var(--ice)}
+.prose{font-family:var(--serif);font-size:16.5px;line-height:1.62}
+.cap{font-size:14px;border-left:4px solid var(--pitch);padding-left:11px;min-height:78px}
+.cap b{display:block;font-size:12.5px;color:var(--pitch);margin-bottom:2px}
+.flag{border:1.5px solid var(--red);border-radius:16px;padding:14px}
 .flag h2{color:var(--red)}
-
-/* nav */
-nav{
-  position:fixed; left:0; right:0; bottom:0; height:var(--nav);
-  padding-bottom:env(safe-area-inset-bottom);
-  background:var(--surface); border-top:1px solid var(--line);
-  display:grid; grid-template-columns:repeat(4,1fr);
-}
-.tab{
-  background:none; border:none; font-family:inherit; color:var(--muted);
-  font-size:11px; font-weight:600; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; gap:3px; cursor:pointer; padding:0;
-}
-.tab svg{width:23px; height:23px; stroke:currentColor; fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round}
+nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(safe-area-inset-bottom);background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
+.tab{background:none;border:none;font-family:inherit;color:var(--muted);font-size:10.5px;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;padding:0}
+.tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .tab.on{color:var(--pitch)}
-.toast{
-  position:fixed; left:50%; transform:translateX(-50%); bottom:calc(var(--nav) + 16px);
-  background:var(--ink); color:var(--bg); padding:11px 18px; border-radius:999px;
-  font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:opacity .2s;
-}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav) + 16px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
 .toast.on{opacity:1}
-@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 </style>
 </head>
 <body>
-
 <main>
-  <div class="top">
-    <h1 id="hi">Knee Check</h1>
-    <div class="date" id="datestr"></div>
-  </div>
+  <div class="top"><h1 id="hi">Knee Check</h1><div class="date" id="datestr"></div></div>
 
-  <!-- ================= TODAY ================= -->
+  <!-- TODAY -->
   <section class="screen on" id="s-today">
+    <div class="today-hero">
+      <div class="lab" id="tlab">TODAY</div>
+      <h2 id="tplan">–</h2>
+      <p class="sub" id="tnote" style="color:inherit;margin:0"></p>
+    </div>
+
     <div class="card">
       <h2>Score your knees</h2>
-      <p class="sub">First thing, before you've walked around much. 0 is nothing at all, 10 is the worst it's been.</p>
+      <p class="sub">First thing, before you have walked around much. 0 is nothing at all, 10 is the worst it has been.</p>
       <div style="height:8px"></div>
-
       <div class="knee">
         <div class="kneehead"><b>Left knee</b><span class="val" id="lval">0</span></div>
         <input type="range" id="lsl" min="0" max="10" step="1" value="0" aria-label="Left knee score out of 10">
         <div class="ticks"><span>0</span><span>5</span><span>10</span></div>
       </div>
-
       <div class="knee">
         <div class="kneehead"><b>Right knee</b><span class="val" id="rval">0</span></div>
         <input type="range" id="rsl" min="0" max="10" step="1" value="0" aria-label="Right knee score out of 10">
         <div class="ticks"><span>0</span><span>5</span><span>10</span></div>
       </div>
-
       <h3 style="margin-top:16px">What did you do yesterday?</h3>
       <div class="chips" id="acts"></div>
-
       <div style="height:16px"></div>
       <button class="btn" id="save">Save today</button>
     </div>
 
     <div id="verdictwrap"></div>
+
+    <div class="card">
+      <h2>Ticked off today</h2>
+      <h3>Tap when done</h3>
+      <button class="tick" id="thep"><i class="box">&#10003;</i><span>Exercises — all three</span></button>
+      <div style="height:8px"></div>
+      <button class="tick ice" id="tice"><i class="box">&#10003;</i><span>Ice after training</span></button>
+    </div>
   </section>
 
-  <!-- ================= TREND ================= -->
+  <!-- TREND -->
   <section class="screen" id="s-trend">
     <div class="stat">
       <div><b id="st-streak">0</b><span>day streak</span></div>
       <div><b id="st-green">0</b><span>greens in 7 days</span></div>
       <div><b id="st-avg">–</b><span>avg left, 7 days</span></div>
     </div>
-
     <div class="card">
-      <h2>Last 14 days</h2>
-      <h3>Worst knee, each morning</h3>
+      <h2>Last 14 days</h2><h3>Worst knee, each morning</h3>
       <div class="strip" id="strip"></div>
     </div>
-
     <div class="card">
       <h2>Both knees over time</h2>
       <svg id="line" viewBox="0 0 340 170" role="img" aria-label="Line chart of left and right knee scores over the last 14 days"></svg>
-      <div class="legend">
-        <span><i class="sw" style="background:var(--pitch)"></i>Left</span>
-        <span><i class="sw" style="background:var(--muted)"></i>Right</span>
-      </div>
+      <div class="legend"><span><i class="sw" style="background:var(--pitch)"></i>Left</span><span><i class="sw" style="background:var(--muted)"></i>Right</span></div>
     </div>
-
+    <div class="card">
+      <h2>Sticking to it</h2><h3>Last 14 days</h3>
+      <div class="bar"><i id="hepbar" style="width:0%"></i></div>
+      <p class="sub" id="heptext">–</p>
+      <div class="bar"><i class="ice" id="icebar" style="width:0%"></i></div>
+      <p class="sub" id="icetext">–</p>
+    </div>
     <button class="btn ghost" id="export">Send my log to Dad or the physio</button>
   </section>
 
-  <!-- ================= PLAN ================= -->
+  <!-- PLAN -->
   <section class="screen" id="s-plan">
     <div class="card">
-      <h2>Where you are on the ramp</h2>
-      <h3>Move up a step after 5 green days out of 7</h3>
-      <div class="bar"><i id="gbar" style="width:0%"></i></div>
-      <p class="sub" id="gtext">–</p>
-      <div id="rungs" style="margin-top:10px"></div>
-      <div style="display:flex; gap:10px; margin-top:14px">
-        <button class="btn ghost" id="down" style="flex:1">Step down</button>
-        <button class="btn" id="up" style="flex:1">Step up</button>
-      </div>
+      <h2>Your week</h2>
+      <h3>Set by Liam, physio at Swindon, 3 Sept</h3>
+      <div class="week" id="weekgrid"></div>
+      <p class="sub"><b>Tuesday and Friday</b> — full training session.<br>
+      <b>Sunday</b> — match, 40 minutes maximum.<br>
+      <b>Every other day</b> — exercises only, and one of them properly off.</p>
     </div>
 
     <div class="card">
-      <h2>Knee holds</h2>
-      <h3 id="phasename">Phase 1 · isometric hold at about 75°</h3>
-      <div class="timer">
-        <div class="clock" id="clock">0:45</div>
-        <div class="reps" id="repline">Rep 1 of 5</div>
-        <button class="btn" id="tstart">Start hold</button>
-        <div style="height:8px"></div>
-        <button class="btn ghost" id="treset">Reset</button>
-      </div>
-      <p class="sub" style="margin-top:14px">Push into the hold steadily. Some ache is fine — sharp pain, or above 3 out of 10, means ease off rather than push through.</p>
+      <h2>40-minute match cap</h2>
+      <h3>Two weeks from 3 September</h3>
+      <div class="count"><b id="capdays">–</b><span class="sub" id="caplabel">days to go</span></div>
+      <div class="bar"><i id="capbar" style="width:0%"></i></div>
+      <p class="sub" id="captext">–</p>
+    </div>
+
+    <div class="card">
+      <h2>How it is going</h2>
+      <div class="bar"><i id="gbar" style="width:0%"></i></div>
+      <p class="sub" id="gtext">–</p>
+      <p class="sub" style="margin-top:10px">Green days do not mean you add minutes on your own. The cap comes off when the physio says so — take these numbers to the review and let him decide.</p>
     </div>
 
     <div class="card">
       <h2>The four rules</h2>
-      <p><b>Never nothing to everything.</b> After a break, build back over four weeks.</p>
+      <p><b>Never nothing to everything.</b> After a break, build back over about four weeks.</p>
       <p><b>Extras count.</b> A 1:1 or an hour shooting in the garden is training. Log it.</p>
-      <p><b>One full day off, every week.</b> That's when the repair happens.</p>
-      <p><b>Stretch your quads, do your holds.</b> The only part that raises the ceiling.</p>
+      <p><b>One full day off, every week.</b> That is when the repair happens.</p>
+      <p><b>Do the boring exercises.</b> They are the only part that raises the ceiling.</p>
     </div>
   </section>
 
-  <!-- ================= WHY ================= -->
+  <!-- REHAB -->
+  <section class="screen" id="s-rehab">
+    <div class="card">
+      <h2 id="exname">Inner range quads</h2>
+      <h3 id="exsub">10 reps · hold 5 seconds</h3>
+      <div class="clock" id="exclock">0:05</div>
+      <div class="phase" id="exphase">Rep 1 of 10</div>
+      <button class="btn" id="exstart">Start</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost" id="exreset">Reset</button>
+      <p class="sub" id="exnote" style="margin-top:14px"></p>
+    </div>
+
+    <div class="card">
+      <h2>Today's three</h2>
+      <h3>Once a day, any order</h3>
+      <div id="exlist"></div>
+    </div>
+
+    <div class="card">
+      <h2>Ice after training</h2>
+      <h3>3 rounds · 10 minutes on, 10 minutes off</h3>
+      <div class="clock" id="iceclock">10:00</div>
+      <div class="phase" id="icephase">Round 1 · ice on</div>
+      <button class="btn ice" id="icestart">Start ice</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost" id="icereset">Reset</button>
+      <p class="sub" style="margin-top:14px">Wrap the pack in a thin towel — never straight on the skin. Sit with the leg out straight. Skip it if the skin is still cold from the last round.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
   <section class="screen" id="s-why">
     <div class="card">
-      <h2>Why it started when it did</h2>
-      <h3>Drag along your summer</h3>
+      <h2>Why it started when it did</h2><h3>Drag along your summer</h3>
       <svg viewBox="0 0 340 200" role="img" aria-label="Chart comparing what your knee could handle against how hard you loaded it across the summer">
         <line x1="30" y1="158" x2="330" y2="158" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
         <g id="bars"></g>
@@ -273,22 +272,17 @@ nav{
       </svg>
       <input type="range" id="scrub" min="0" max="10" value="0" step="1" aria-label="Move through the summer week by week">
       <div class="cap" id="cap"></div>
-      <div class="legend">
-        <span><i class="sw" style="background:var(--pitch)"></i>What your knee could handle</span>
-        <span><i class="sw" style="background:var(--muted)"></i>What you asked of it</span>
-      </div>
+      <div class="legend"><span><i class="sw" style="background:var(--pitch)"></i>What your knee could handle</span><span><i class="sw" style="background:var(--muted)"></i>What you asked of it</span></div>
     </div>
-
     <div class="card prose">
       <h2 style="font-family:var(--sans)">What the bump actually is</h2>
-      <p>Your thigh muscle pulls on your kneecap, the kneecap pulls on a tendon, and that tendon anchors into a small bump on the top of your shin. On a 12-year-old that anchor isn't finished bone yet — it's a growth plate, still soft and still building.</p>
-      <p>So the tendon is pulling hard on a construction site. That tug is the ache. It's called Osgood-Schlatter, roughly 1 in 10 sporty teenagers get it, and it isn't damage. It's an area being asked for more than it can currently give.</p>
-      <p>It can grumble on for a year or more and flares when you have a growth spurt. That's normal, and it isn't going backwards. The aim isn't a knee that never aches — it's playing a full season without ever having to stop.</p>
+      <p>Your thigh muscle pulls on your kneecap, the kneecap pulls on a tendon, and that tendon anchors into a small bump on the top of your shin. On a 12-year-old that anchor is not finished bone yet — it is a growth plate, still soft and still building.</p>
+      <p>So the tendon is pulling hard on a construction site. That tug is the ache. It is called Osgood-Schlatter, roughly 1 in 10 sporty teenagers get it, and it is not damage. It is an area being asked for more than it can currently give.</p>
+      <p>It can grumble on for a year or more and flares when you have a growth spurt. That is normal, and it is not going backwards. The aim is not a knee that never aches — it is playing a full season without ever having to stop.</p>
     </div>
-
     <div class="flag">
       <h2>Tell someone straight away if…</h2>
-      <p class="sub" style="color:inherit">You feel a sudden pop while striking or landing, and afterwards you can't straighten your leg or put weight on it. Stop, don't walk it off, say so immediately. It's rare, and it's a different thing from this.</p>
+      <p class="sub" style="color:inherit">You feel a sudden pop while striking or landing, and afterwards you cannot straighten your leg or put weight on it. Stop, do not walk it off, say so immediately. It is rare, and it is a different thing from this.</p>
     </div>
   </section>
 </main>
@@ -296,20 +290,17 @@ nav{
 <nav>
   <button class="tab on" data-s="today"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Today</button>
   <button class="tab" data-s="trend"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l4-5 3 3 5-7"/></svg>Trend</button>
-  <button class="tab" data-s="plan"><svg viewBox="0 0 24 24"><path d="M4 20v-5h4v5M10 20V9h4v11M16 20V4h4v16"/></svg>Plan</button>
+  <button class="tab" data-s="plan"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Plan</button>
+  <button class="tab" data-s="rehab"><svg viewBox="0 0 24 24"><path d="M4 9v6M20 9v6M7 6v12M17 6v12M7 12h10"/></svg>Rehab</button>
   <button class="tab" data-s="why"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.2 2.5c-.5.2-.7.6-.7 1.1v.6"/><path d="M12 17h.01"/></svg>Why</button>
 </nav>
-
 <div class="toast" id="toast"></div>
 
 <script>
-/* ---------- storage adapter: window.storage in preview, localStorage on the phone ---------- */
 const KEY='knee-app-v1';
 const Store={
   async get(){
-    if(window.storage){
-      try{ const r=await window.storage.get(KEY); return r&&r.value?JSON.parse(r.value):null; }catch(e){ return null; }
-    }
+    if(window.storage){ try{ const r=await window.storage.get(KEY); return r&&r.value?JSON.parse(r.value):null; }catch(e){ return null; } }
     try{ const v=localStorage.getItem(KEY); return v?JSON.parse(v):null; }catch(e){ return null; }
   },
   async set(o){
@@ -329,10 +320,21 @@ const today=()=>key(new Date());
 const dayBack=n=>{const d=new Date(); d.setDate(d.getDate()-n); return d;};
 const band=v=> v<=3?'green' : v<=5?'amber' : 'red';
 const buzz=ms=>{ try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} };
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),1900); }
 
-function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),1900); }
+/* ---- the physio's prescription ---- */
+const CAP_START=new Date('2026-09-03T00:00:00');
+const CAP_END=new Date('2026-09-17T00:00:00');
+const SCHED={
+  0:{k:'match', t:'Match day — 40 minutes maximum', n:'Forty minutes is the whole allowance, warm-up shooting included. Ice when you get home.'},
+  1:{k:'rest',  t:'Exercises only', n:'No football today. Do your three and stretch your quads.'},
+  2:{k:'train', t:'Training — full session', n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
+  3:{k:'rest',  t:'Exercises only', n:'No football today. Do your three and stretch your quads.'},
+  4:{k:'rest',  t:'Full day off', n:'Nothing at all today, not even the garden. This is the day the repair happens.'},
+  5:{k:'train', t:'Training — full session', n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
+  6:{k:'rest',  t:'Exercises only', n:'Rest ahead of tomorrow. Do your three, then leave it alone.'}
+};
 
-/* ---------- nav ---------- */
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id==='s-'+b.dataset.s));
@@ -341,10 +343,16 @@ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
   if(b.dataset.s==='plan') drawPlan();
 }));
 
-/* ---------- today ---------- */
-$('datestr').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long', day:'numeric', month:'short'});
-const h=new Date().getHours();
-$('hi').textContent = h<11 ? 'Morning, Dotun' : h<18 ? 'Afternoon, Dotun' : 'Evening, Dotun';
+$('datestr').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'});
+const hr=new Date().getHours();
+$('hi').textContent = hr<11?'Morning, Dotun' : hr<18?'Afternoon, Dotun' : 'Evening, Dotun';
+
+function paintToday(){
+  const s=SCHED[new Date().getDay()];
+  $('tplan').textContent=s.t;
+  $('tnote').textContent=s.n;
+  $('tice').style.display = s.k==='rest' ? 'none' : 'flex';
+}
 
 ACTS.forEach(a=>{
   const b=document.createElement('button');
@@ -353,128 +361,188 @@ ACTS.forEach(a=>{
   $('acts').appendChild(b);
 });
 const paintChips=()=>document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c.dataset.a===act));
-
-function colorFor(v){ return v<=3?'var(--green)':v<=5?'var(--amber)':'var(--red)'; }
+const colorFor=v=> v<=3?'var(--green)': v<=5?'var(--amber)':'var(--red)';
 function bindSlider(sl,out){
-  const paint=()=>{ const v=+sl.value; out.textContent=v; out.style.color=colorFor(v); sl.style.color=colorFor(v); };
-  sl.addEventListener('input',()=>{ paint(); buzz(5); });
-  paint();
+  const paint=()=>{const v=+sl.value; out.textContent=v; out.style.color=colorFor(v); sl.style.color=colorFor(v);};
+  sl.addEventListener('input',()=>{paint(); buzz(5);}); paint();
 }
-bindSlider($('lsl'),$('lval'));
-bindSlider($('rsl'),$('rval'));
+bindSlider($('lsl'),$('lval')); bindSlider($('rsl'),$('rval'));
 
 const ACTION={
-  green:{tag:'GREEN', head:'Good to go', body:'Train or play as planned. String five of these together in a week and you move up a step on the ramp.'},
-  amber:{tag:'AMBER', head:'Play, but dial it back', body:'Still train — just halve the shooting and jumping, skip the extras, and stay on your current step this week. Tell your coach before the session, not after.'},
-  red:{tag:'RED', head:'Drop back a step', body:'Technical and low-impact work only for a week or two, then rebuild. This is not an injury and not the end of your season — it is the knee asking for a smaller ask. Tell Dad and the physio today.'}
+  green:{tag:'GREEN',head:'Good to go',body:'Follow the plan for today exactly as it stands. Keep banking these — they are what the physio decides the next step from.'},
+  amber:{tag:'AMBER',head:'Play, but dial it back',body:'Still train, but halve the shooting and jumping and skip any extras. Tell your coach before the session, not after.'},
+  red:{tag:'RED',head:'Ease right off',body:'Technical and low-impact work only, and tell Dad and the physio today. This is not an injury and not the end of your season — it is the knee asking for a smaller ask.'}
 };
 
 function renderVerdict(){
-  const e=db.entries[today()];
-  const w=$('verdictwrap');
+  const e=db.entries[today()], w=$('verdictwrap');
   if(!e){ w.innerHTML=''; return; }
-  const b=band(Math.max(e.l,e.r)); const a=ACTION[b];
-  w.innerHTML='<div class="verdict '+b+'"><div class="tag">'+a.tag+'</div><h2>'+a.head+'</h2><p class="sub" style="color:inherit">'+a.body+'</p>'+
-    '<p class="sub" style="margin-top:10px">Saved: left '+e.l+', right '+e.r+(e.act?' · yesterday: '+e.act.toLowerCase():'')+'</p></div>';
+  const b=band(Math.max(e.l,e.r)), a=ACTION[b];
+  w.innerHTML='<div class="verdict '+b+'"><div class="tag">'+a.tag+'</div><h2>'+a.head+'</h2><p class="sub" style="color:inherit">'+a.body+'</p><p class="sub" style="margin-top:10px">Saved: left '+e.l+', right '+e.r+(e.act?' · yesterday: '+e.act.toLowerCase():'')+'</p></div>';
 }
 
+function paintTicks(){
+  const e=db.entries[today()]||{};
+  $('thep').classList.toggle('on', !!e.hep);
+  $('tice').classList.toggle('on', !!e.ice);
+}
+async function toggle(field){
+  const k=today();
+  db.entries[k]=db.entries[k]||{l:0,r:0,act:null};
+  db.entries[k][field]=!db.entries[k][field];
+  paintTicks(); buzz(12); await Store.set(db);
+}
+$('thep').addEventListener('click',()=>toggle('hep'));
+$('tice').addEventListener('click',()=>toggle('ice'));
+
 $('save').addEventListener('click', async ()=>{
-  db.entries[today()]={l:+$('lsl').value, r:+$('rsl').value, act:act};
+  const k=today(), prev=db.entries[k]||{};
+  db.entries[k]={l:+$('lsl').value, r:+$('rsl').value, act:act, hep:!!prev.hep, ice:!!prev.ice};
   renderVerdict(); buzz(18);
   const ok=await Store.set(db);
   toast(ok?'Saved':'Saved on screen only — storage blocked');
 });
 
-/* ---------- trend ---------- */
+/* ---- trend ---- */
 function drawTrend(){
   const days=[]; for(let i=13;i>=0;i--) days.push(dayBack(i));
   const strip=$('strip'); strip.innerHTML='';
   days.forEach(d=>{
-    const e=db.entries[key(d)]; const el=document.createElement('div');
-    el.className='day'+(e?' '+band(Math.max(e.l,e.r)):'');
-    el.textContent=d.getDate();
-    strip.appendChild(el);
+    const e=db.entries[key(d)], el=document.createElement('div');
+    el.className='day'+(e&&e.l!==undefined&&(e.l||e.r||e.act||e.l===0)?' '+band(Math.max(e.l,e.r)):'');
+    el.textContent=d.getDate(); strip.appendChild(el);
   });
-
   let streak=0; for(let i=0;i<400;i++){ if(db.entries[key(dayBack(i))]) streak++; else { if(i===0) continue; break; } }
   const last7=[]; for(let i=0;i<7;i++){ const e=db.entries[key(dayBack(i))]; if(e) last7.push(e); }
   const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
   const avg=last7.length?(last7.reduce((s,e)=>s+e.l,0)/last7.length).toFixed(1):'–';
   $('st-streak').textContent=streak; $('st-green').textContent=greens; $('st-avg').textContent=avg;
 
-  const W=340,H=170,X0=26,X1=330,Y0=142,Y1=16;
+  const X0=26,X1=330,Y0=142,Y1=16;
   const px=i=>X0+(X1-X0)*(i/13), py=v=>Y0-(Y0-Y1)*(v/10);
   let g='';
   for(let v=0;v<=10;v+=5) g+='<line x1="'+X0+'" y1="'+py(v)+'" x2="'+X1+'" y2="'+py(v)+'" stroke="currentColor" opacity=".14"/><text x="'+(X0-6)+'" y="'+(py(v)+4)+'" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">'+v+'</text>';
-  const path=side=>{
-    let d='',open=false;
-    days.forEach((dd,i)=>{ const e=db.entries[key(dd)];
-      if(e){ d+=(open?'L':'M')+px(i)+' '+py(e[side]); open=true; } else open=false; });
-    return d;
-  };
-  let dots='';
-  days.forEach((dd,i)=>{ const e=db.entries[key(dd)]; if(e){ dots+='<circle cx="'+px(i)+'" cy="'+py(e.l)+'" r="3" fill="var(--pitch)"/>'; }});
-  $('line').innerHTML=g+
-    '<path d="'+path('r')+'" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round"/>'+
-    '<path d="'+path('l')+'" fill="none" stroke="var(--pitch)" stroke-width="2.6" stroke-linejoin="round"/>'+dots+
-    '<text x="'+X0+'" y="162" font-size="10" fill="currentColor" opacity=".5">14 days ago</text>'+
-    '<text x="'+X1+'" y="162" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">today</text>';
+  const path=side=>{let d='',open=false; days.forEach((dd,i)=>{const e=db.entries[key(dd)]; if(e&&e[side]!==undefined){d+=(open?'L':'M')+px(i)+' '+py(e[side]); open=true;} else open=false;}); return d;};
+  let dots=''; days.forEach((dd,i)=>{const e=db.entries[key(dd)]; if(e&&e.l!==undefined) dots+='<circle cx="'+px(i)+'" cy="'+py(e.l)+'" r="3" fill="var(--pitch)"/>';});
+  $('line').innerHTML=g+'<path d="'+path('r')+'" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round"/><path d="'+path('l')+'" fill="none" stroke="var(--pitch)" stroke-width="2.6" stroke-linejoin="round"/>'+dots+'<text x="'+X0+'" y="162" font-size="10" fill="currentColor" opacity=".5">14 days ago</text><text x="'+X1+'" y="162" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">today</text>';
+
+  const hepDone=days.filter(d=>(db.entries[key(d)]||{}).hep).length;
+  const iceDays=days.filter(d=>[0,2,5].includes(d.getDay()));
+  const iceDone=iceDays.filter(d=>(db.entries[key(d)]||{}).ice).length;
+  $('hepbar').style.width=(hepDone/14*100)+'%';
+  $('heptext').textContent='Exercises done on '+hepDone+' of the last 14 days.';
+  $('icebar').style.width=(iceDays.length?iceDone/iceDays.length*100:0)+'%';
+  $('icetext').textContent='Ice done after '+iceDone+' of '+iceDays.length+' training and match days.';
 }
 
-$('export').addEventListener('click',async ()=>{
-  const rows=['date,left,right,band,yesterday'];
-  Object.keys(db.entries).sort().slice(-28).forEach(k=>{ const e=db.entries[k];
-    rows.push(k+','+e.l+','+e.r+','+band(Math.max(e.l,e.r))+','+(e.act||'')); });
-  const txt='Dotun knee log (step '+db.step+' of the ramp)\n\n'+rows.join('\n');
+$('export').addEventListener('click', async ()=>{
+  const rows=['date,left,right,band,yesterday,exercises,ice'];
+  Object.keys(db.entries).sort().slice(-28).forEach(k=>{const e=db.entries[k];
+    rows.push(k+','+(e.l??'')+','+(e.r??'')+','+(e.l!==undefined?band(Math.max(e.l,e.r)):'')+','+(e.act||'')+','+(e.hep?'y':'n')+','+(e.ice?'y':'n'));});
+  const txt='Dotun knee log\nPlan: Tue + Fri full training, Sun match 40 min cap to 17 Sep, ice after training, HEP daily.\n\n'+rows.join('\n');
   try{
     if(navigator.share){ await navigator.share({title:'Knee log', text:txt}); return; }
     await navigator.clipboard.writeText(txt); toast('Copied — paste it into a message');
   }catch(e){ toast('Could not share that'); }
 });
 
-/* ---------- plan ---------- */
-const RUNGS=[
-  ['Step 1','50–60% of session minutes. Technical and possession work, about 10–15 strikes, no jumping drills.'],
-  ['Step 2','70% of minutes. Controlled sprinting and turning back in. Shooting up by about a third.'],
-  ['Step 3','80–85% of minutes. First competitive minutes off the bench, around half a match.'],
-  ['Step 4','Full session minutes, match minutes built up to full over one or two more weeks.']
-];
+/* ---- plan ---- */
 function drawPlan(){
-  const last7=[]; for(let i=0;i<7;i++){ const e=db.entries[key(dayBack(i))]; if(e) last7.push(e); }
-  const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
-  $('gbar').style.width=Math.min(100,greens/5*100)+'%';
-  $('gtext').textContent = greens>=5
-    ? 'Five greens banked. You have earned the next step — check with Dad or the physio, then tap Step up.'
-    : greens+' green '+(greens===1?'day':'days')+' out of the last 7. You need 5 before moving up.';
-
-  $('rungs').innerHTML=RUNGS.map((r,i)=>{
-    const n=i+1, cls = n<db.step?'done' : n===db.step?'now':'';
-    return '<div class="rung '+cls+'"><div class="n">'+n+'</div><div class="t"><b>'+r[0]+(n===db.step?' — you are here':'')+'</b><br><span class="sub">'+r[1]+'</span></div></div>';
+  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], order=[1,2,3,4,5,6,0];
+  const todayDow=new Date().getDay();
+  $('weekgrid').innerHTML=order.map(d=>{
+    const s=SCHED[d];
+    const label = s.k==='match' ? '40 min' : s.k==='train' ? 'Full' : (d===4?'Off':'Exercises');
+    return '<div class="wd '+s.k+(d===todayDow?' now':'')+'"><b>'+names[d]+'</b>'+label+'</div>';
   }).join('');
-}
-$('up').addEventListener('click',async ()=>{ if(db.step<4){db.step++; drawPlan(); await Store.set(db); buzz(15); toast('Moved to step '+db.step);} });
-$('down').addEventListener('click',async ()=>{ if(db.step>1){db.step--; drawPlan(); await Store.set(db); buzz(15); toast('Back to step '+db.step);} });
 
-/* ---------- hold timer ---------- */
-let tLeft=45, rep=1, tick=null;
+  const msDay=86400000;
+  const left=Math.max(0, Math.ceil((CAP_END-new Date())/msDay));
+  const total=Math.round((CAP_END-CAP_START)/msDay);
+  $('capdays').textContent=left;
+  $('caplabel').textContent = left===1?'day to go':'days to go';
+  $('capbar').style.width=Math.min(100,Math.max(0,(total-left)/total*100))+'%';
+  $('captext').textContent = left>0
+    ? 'Forty minutes maximum on Sundays until 17 September, then the physio reviews it. Warm-up shooting counts inside the forty.'
+    : 'The two weeks are up. Do not add minutes yourself — take your scores to the physio and let him set the next step.';
+
+  const last7=[]; for(let i=0;i<7;i++){const e=db.entries[key(dayBack(i))]; if(e&&e.l!==undefined) last7.push(e);}
+  const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
+  $('gbar').style.width=(last7.length?greens/7*100:0)+'%';
+  $('gtext').textContent=greens+' green '+(greens===1?'day':'days')+' out of the last 7 scored.';
+}
+
+/* ---- exercises ---- */
+const EX=[
+  {id:'irq', name:'Inner range quads', reps:10, hold:5, sub:'10 reps · hold 5 seconds',
+   note:'Towel rolled under the knee. Squeeze the thigh, press the knee down into the towel and lift the foot off the floor. Lower under control.'},
+  {id:'ws', name:'Wall squat', reps:3, hold:30, sub:'3 reps · hold 30 seconds',
+   note:'Back flat to the wall, feet shoulder-width and out in front. Slide down to about 45 degrees at the knee and hold. Push back up through the heels.'},
+  {id:'slr', name:'Straight leg raise', reps:10, hold:5, sub:'10 reps · hold 5 seconds',
+   note:'Lying flat, other knee bent. Toes pulled back, knee locked straight, lift only a few inches. Low and controlled beats high.'}
+];
+let exi=0, exRep=1, exLeft=EX[0].hold, exTick=null, exResting=false;
 const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
-function paintTimer(){ $('clock').textContent=fmt(tLeft); $('repline').textContent='Rep '+rep+' of 5'; }
-$('tstart').addEventListener('click',()=>{
-  if(tick){ clearInterval(tick); tick=null; $('tstart').textContent='Resume hold'; return; }
-  $('tstart').textContent='Pause';
-  tick=setInterval(()=>{
-    tLeft--; paintTimer();
-    if(tLeft<=0){
-      clearInterval(tick); tick=null; buzz([120,80,120]);
-      if(rep<5){ rep++; tLeft=45; paintTimer(); $('tstart').textContent='Start rep '+rep; }
-      else { $('clock').textContent='Done'; $('repline').textContent='All 5 holds finished'; $('tstart').textContent='Start hold'; rep=1; tLeft=45; }
+
+function paintEx(){
+  const e=EX[exi];
+  $('exname').textContent=e.name; $('exsub').textContent=e.sub; $('exnote').textContent=e.note;
+  $('exclock').textContent=fmt(exLeft);
+  $('exphase').textContent = exResting ? 'Rest' : 'Rep '+exRep+' of '+e.reps;
+  document.querySelectorAll('[data-ex]').forEach(b=>b.classList.toggle('now', +b.dataset.ex===exi));
+}
+function stopEx(){ clearInterval(exTick); exTick=null; $('exstart').textContent='Start'; }
+function loadEx(i){ stopEx(); exi=i; exRep=1; exResting=false; exLeft=EX[i].hold; paintEx(); window.scrollTo(0,0); }
+
+$('exlist').innerHTML=EX.map((e,i)=>'<div class="ex"><div class="exhead"><b>'+e.name+'</b><span>'+e.sub+'</span></div><div style="height:8px"></div><button class="btn ghost" data-ex="'+i+'">Do this one</button></div>').join('');
+document.querySelectorAll('[data-ex]').forEach(b=>b.addEventListener('click',()=>loadEx(+b.dataset.ex)));
+
+$('exstart').addEventListener('click',()=>{
+  if(exTick){ stopEx(); return; }
+  $('exstart').textContent='Pause';
+  exTick=setInterval(()=>{
+    exLeft--; paintEx();
+    if(exLeft<=0){
+      buzz(exResting?60:[100,60,100]);
+      const e=EX[exi];
+      if(exResting){ exResting=false; exLeft=e.hold; }
+      else if(exRep<e.reps){ exRep++; exResting=true; exLeft=3; }
+      else{ stopEx(); exResting=false; exRep=1; exLeft=e.hold;
+            $('exphase').textContent='Done — '+e.name+' finished'; buzz([150,80,150]);
+            if(exi<EX.length-1) toast('Next: '+EX[exi+1].name); return; }
+      paintEx();
     }
   },1000);
 });
-$('treset').addEventListener('click',()=>{ clearInterval(tick); tick=null; tLeft=45; rep=1; paintTimer(); $('tstart').textContent='Start hold'; });
-paintTimer();
+$('exreset').addEventListener('click',()=>{ stopEx(); exRep=1; exResting=false; exLeft=EX[exi].hold; paintEx(); });
+paintEx();
 
-/* ---------- why chart ---------- */
+/* ---- ice ---- */
+let iceRound=1, iceOn=true, iceLeft=600, iceTick=null;
+function paintIce(){
+  $('iceclock').textContent=fmt(iceLeft);
+  $('icephase').textContent='Round '+iceRound+' · '+(iceOn?'ice on':'ice off');
+}
+$('icestart').addEventListener('click',()=>{
+  if(iceTick){ clearInterval(iceTick); iceTick=null; $('icestart').textContent='Resume'; return; }
+  $('icestart').textContent='Pause';
+  iceTick=setInterval(()=>{
+    iceLeft--; paintIce();
+    if(iceLeft<=0){
+      buzz([200,100,200]);
+      if(iceOn){ iceOn=false; iceLeft=600; }
+      else if(iceRound<3){ iceRound++; iceOn=true; iceLeft=600; }
+      else{ clearInterval(iceTick); iceTick=null; $('icestart').textContent='Start ice';
+            $('iceclock').textContent='Done'; $('icephase').textContent='All three rounds finished';
+            iceRound=1; iceOn=true; iceLeft=600; toast('Tick it off on the Today screen'); return; }
+      paintIce();
+    }
+  },1000);
+});
+$('icereset').addEventListener('click',()=>{ clearInterval(iceTick); iceTick=null; iceRound=1; iceOn=true; iceLeft=600; paintIce(); $('icestart').textContent='Start ice'; });
+paintIce();
+
+/* ---- why chart ---- */
 const WEEKS=[
  {t:85,l:72,ti:'Season ends',tx:'Peak condition. Months of training had built your knee up to handle everything a match threw at it.'},
  {t:78,l:8,ti:'Holiday, week 1',tx:'You stop. Within days the ceiling starts dropping — tendons and growth plates lose capacity when nothing is asking anything of them.'},
@@ -486,14 +554,14 @@ const WEEKS=[
  {t:46,l:64,ti:'1:1 session',tx:'Straight into a full-intensity striker session. Repeated shooting and stopping — the two heaviest things you can do to that bump.'},
  {t:45,l:74,ti:'1:1 again, four days later',tx:'A second big session before anything had recovered. The ask goes clean over the ceiling, and the left knee says stop.',ouch:1},
  {t:48,l:4,ti:'Rest week',tx:'Pain settles fast. Good sign — but the ceiling is still low, so going straight back at 100% would just repeat the whole thing.'},
- {t:52,l:36,ti:'Season restarts',tx:'So you start at about 60% and climb back over four weeks. Same destination, a route your knee can actually follow.'}
+ {t:54,l:30,ti:'Now — two sessions a week',tx:'Two full sessions and forty minutes on Sunday. Less football than you want, on purpose: it is the amount your knee can turn into a higher ceiling instead of another flare.'}
 ];
 const CX0=30,CX1=326,CY0=158,CTOP=20;
 const cpx=i=>CX0+(CX1-CX0)*(i/(WEEKS.length-1)), cpy=v=>CY0-(CY0-CTOP)*(v/100);
 $('bars').innerHTML=WEEKS.map((w,i)=>'<rect x="'+(cpx(i)-8)+'" y="'+cpy(w.l)+'" width="16" height="'+Math.max(CY0-cpy(w.l),2)+'" rx="3" fill="var(--muted)" opacity=".45"/>').join('');
 $('tol').setAttribute('d',WEEKS.map((w,i)=>(i?'L':'M')+cpx(i)+' '+cpy(w.t)).join(' '));
 function paintWhy(i){
-  const w=WEEKS[i],x=cpx(i);
+  const w=WEEKS[i], x=cpx(i);
   $('head').setAttribute('x1',x); $('head').setAttribute('x2',x);
   $('knob').setAttribute('cx',x); $('knob').setAttribute('cy',cpy(w.t));
   $('ouch').setAttribute('opacity',w.ouch?1:0);
@@ -503,15 +571,17 @@ function paintWhy(i){
 $('scrub').addEventListener('input',e=>{ paintWhy(+e.target.value); buzz(4); });
 paintWhy(0);
 
-/* ---------- boot ---------- */
+/* ---- boot ---- */
 (async ()=>{
   const saved=await Store.get();
   if(saved){ db.entries=saved.entries||{}; db.step=saved.step||1; }
   const e=db.entries[today()];
-  if(e){ $('lsl').value=e.l; $('rsl').value=e.r; act=e.act||null;
+  if(e && e.l!==undefined){
+    $('lsl').value=e.l; $('rsl').value=e.r; act=e.act||null;
     $('lsl').dispatchEvent(new Event('input')); $('rsl').dispatchEvent(new Event('input'));
-    $('save').textContent='Update today'; }
-  paintChips(); renderVerdict();
+    $('save').textContent='Update today';
+  }
+  paintToday(); paintChips(); renderVerdict(); paintTicks(); drawPlan();
   if('serviceWorker' in navigator){ try{ navigator.serviceWorker.register('sw.js'); }catch(e){} }
 })();
 </script>
