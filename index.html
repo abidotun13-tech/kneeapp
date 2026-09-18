@@ -10,26 +10,22 @@
 <title>Knee Check</title>
 <style>
 :root{
-  --bg:#EFF3F0; --surface:#FFFFFF; --ink:#101A22; --muted:#5D6B74;
-  --line:#DCE4DF; --pitch:#0B7A46; --pitch-soft:#E4F1EA;
-  --green:#1E8E4E; --amber:#C87A00; --red:#C0392B; --ice:#2E6FA8; --ice-soft:#E4EEF7;
+  --bg:#EFF3F0;--surface:#FFFFFF;--ink:#101A22;--muted:#5D6B74;
+  --line:#DCE4DF;--pitch:#0B7A46;--pitch-soft:#E4F1EA;
+  --green:#1E8E4E;--amber:#C87A00;--red:#C0392B;--ice:#2E6FA8;--ice-soft:#E4EEF7;
   --sans:system-ui,"Roboto","Helvetica Neue",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
   --nav:calc(60px + env(safe-area-inset-bottom));
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0E1512; --surface:#18211C; --ink:#E8EEE9; --muted:#94A29A;
-    --line:#26332C; --pitch:#3DBB77; --pitch-soft:#16291F;
-    --green:#3DBB77; --amber:#E2A03A; --red:#E2685B; --ice:#6FB0E0; --ice-soft:#152430;
-  }
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0E1512;--surface:#18211C;--ink:#E8EEE9;--muted:#94A29A;--line:#26332C;
+  --pitch:#3DBB77;--pitch-soft:#16291F;--green:#3DBB77;--amber:#E2A03A;--red:#E2685B;--ice:#6FB0E0;--ice-soft:#152430}
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;overscroll-behavior-y:contain}
 main{padding:14px 16px calc(var(--nav) + 24px);max-width:560px;margin:0 auto}
-.screen{display:none}
-.screen.on{display:block;animation:in .18s ease-out}
+.screen{display:none}.screen.on{display:block;animation:in .18s ease-out}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .top{display:flex;align-items:baseline;justify-content:space-between;padding:8px 2px 14px}
 .top h1{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0}
@@ -56,51 +52,44 @@ input[type=range]::-moz-range-thumb{width:34px;height:34px;border-radius:50%;bac
 .btn:active{transform:scale(.99)}
 .btn.ghost{background:transparent;color:var(--pitch);border:1.5px solid var(--pitch)}
 .btn.ice{background:var(--ice)}
-.btn:focus-visible,.chip:focus-visible,.tab:focus-visible,.tick:focus-visible{outline:3px solid var(--pitch);outline-offset:2px}
+.btn:focus-visible,.chip:focus-visible,.tab:focus-visible,.tick:focus-visible,.side:focus-visible{outline:3px solid var(--pitch);outline-offset:2px}
 .verdict{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:16px;padding:16px 16px 16px 14px;background:var(--surface);margin-bottom:14px}
-.verdict.green{border-left-color:var(--green)}
-.verdict.amber{border-left-color:var(--amber)}
-.verdict.red{border-left-color:var(--red)}
+.verdict.green{border-left-color:var(--green)}.verdict.amber{border-left-color:var(--amber)}.verdict.red{border-left-color:var(--red)}
 .verdict .tag{font-size:12px;font-weight:800;letter-spacing:.06em}
-.verdict.green .tag{color:var(--green)}
-.verdict.amber .tag{color:var(--amber)}
-.verdict.red .tag{color:var(--red)}
+.verdict.green .tag{color:var(--green)}.verdict.amber .tag{color:var(--amber)}.verdict.red .tag{color:var(--red)}
 .verdict h2{margin:2px 0 6px}
 .today-hero{background:var(--pitch-soft);border:1px solid var(--pitch);border-radius:20px;padding:16px 18px;margin-bottom:14px}
 .today-hero .lab{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--pitch)}
 .today-hero h2{margin:3px 0 4px;font-size:19px}
 .strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .day{aspect-ratio:1/1.05;border-radius:10px;background:var(--line);display:flex;align-items:flex-end;justify-content:center;font-size:11px;color:var(--muted);padding-bottom:4px}
-.day.green{background:var(--green);color:#fff}
-.day.amber{background:var(--amber);color:#fff}
-.day.red{background:var(--red);color:#fff}
+.day.green{background:var(--green);color:#fff}.day.amber{background:var(--amber);color:#fff}.day.red{background:var(--red);color:#fff}
 svg{display:block;width:100%;height:auto}
 .legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
 .sw{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
 .stat{display:flex;gap:10px;margin-bottom:14px}
-.stat > div{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
+.stat>div{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
 .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
 .stat span{font-size:12.5px;color:var(--muted)}
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:6px 0 12px}
-.wd{border:1px solid var(--line);border-radius:12px;padding:8px 3px;text-align:center;font-size:11px;color:var(--muted)}
+.wd{border:1px solid var(--line);border-radius:12px;padding:8px 3px;text-align:center;font-size:10.5px;color:var(--muted)}
 .wd b{display:block;font-size:12px;color:var(--ink);margin-bottom:3px}
-.wd.train{background:var(--pitch-soft);border-color:var(--pitch)}
-.wd.train b{color:var(--pitch)}
-.wd.match{background:var(--pitch);border-color:var(--pitch)}
-.wd.match b,.wd.match{color:#fff}
+.wd.train{background:var(--pitch-soft);border-color:var(--pitch)}.wd.train b{color:var(--pitch)}
+.wd.match{background:var(--pitch);border-color:var(--pitch)}.wd.match,.wd.match b{color:#fff}
+.wd.other{background:var(--ice-soft);border-color:var(--ice)}.wd.other b{color:var(--ice)}
 .wd.now{outline:2.5px solid var(--ink);outline-offset:1px}
 .count{display:flex;align-items:baseline;gap:8px}
 .count b{font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .bar{height:9px;border-radius:6px;background:var(--line);overflow:hidden;margin:10px 0 6px}
-.bar i{display:block;height:100%;background:var(--pitch)}
-.bar i.ice{background:var(--ice)}
-.ex{border-top:1px solid var(--line);padding:14px 0}
-.ex:first-of-type{border-top:none;padding-top:2px}
+.bar i{display:block;height:100%;background:var(--pitch)}.bar i.ice{background:var(--ice)}
+.ex{border-top:1px solid var(--line);padding:14px 0}.ex:first-of-type{border-top:none;padding-top:2px}
 .exhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.exhead b{font-size:15.5px}
-.exhead span{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.exhead b{font-size:15.5px}.exhead span{font-size:12.5px;color:var(--muted);white-space:nowrap}
 .clock{font-size:52px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:1;text-align:center}
 .phase{text-align:center;font-size:13px;color:var(--muted);margin:4px 0 12px}
+.sides{display:flex;gap:8px;margin:0 0 12px}
+.side{flex:1;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:14px;padding:11px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.side.on{background:var(--pitch-soft);border-color:var(--pitch);color:var(--pitch)}
 .tick{display:flex;align-items:center;gap:12px;width:100%;background:transparent;border:1px solid var(--line);border-radius:16px;padding:14px;font-family:inherit;font-size:15px;color:var(--ink);cursor:pointer;text-align:left}
 .tick .box{width:24px;height:24px;border-radius:8px;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff}
 .tick.on{background:var(--pitch-soft);border-color:var(--pitch)}
@@ -118,21 +107,19 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
 .tab.on{color:var(--pitch)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav) + 16px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
 .toast.on{opacity:1}
-@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main>
   <div class="top"><h1 id="hi">Knee Check</h1><div class="date" id="datestr"></div></div>
 
-  <!-- TODAY -->
   <section class="screen on" id="s-today">
     <div class="today-hero">
       <div class="lab" id="tlab">TODAY</div>
       <h2 id="tplan">–</h2>
       <p class="sub" id="tnote" style="color:inherit;margin:0"></p>
     </div>
-
     <div class="card">
       <h2>Score your knees</h2>
       <p class="sub">First thing, before you have walked around much. 0 is nothing at all, 10 is the worst it has been.</p>
@@ -152,115 +139,99 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
       <div style="height:16px"></div>
       <button class="btn" id="save">Save today</button>
     </div>
-
     <div id="verdictwrap"></div>
-
     <div class="card">
-      <h2>Ticked off today</h2>
-      <h3>Tap when done</h3>
+      <h2>Ticked off today</h2><h3>Tap when done</h3>
       <button class="tick" id="thep"><i class="box">&#10003;</i><span>Exercises — all three</span></button>
       <div style="height:8px"></div>
       <button class="tick ice" id="tice"><i class="box">&#10003;</i><span>Ice after training</span></button>
     </div>
   </section>
 
-  <!-- TREND -->
   <section class="screen" id="s-trend">
     <div class="stat">
       <div><b id="st-streak">0</b><span>day streak</span></div>
       <div><b id="st-green">0</b><span>greens in 7 days</span></div>
       <div><b id="st-avg">–</b><span>avg left, 7 days</span></div>
     </div>
-    <div class="card">
-      <h2>Last 14 days</h2><h3>Worst knee, each morning</h3>
-      <div class="strip" id="strip"></div>
-    </div>
-    <div class="card">
-      <h2>Both knees over time</h2>
+    <div class="card"><h2>Last 14 days</h2><h3>Worst knee, each morning</h3><div class="strip" id="strip"></div></div>
+    <div class="card"><h2>Both knees over time</h2>
       <svg id="line" viewBox="0 0 340 170" role="img" aria-label="Line chart of left and right knee scores over the last 14 days"></svg>
       <div class="legend"><span><i class="sw" style="background:var(--pitch)"></i>Left</span><span><i class="sw" style="background:var(--muted)"></i>Right</span></div>
     </div>
-    <div class="card">
-      <h2>Sticking to it</h2><h3>Last 14 days</h3>
-      <div class="bar"><i id="hepbar" style="width:0%"></i></div>
-      <p class="sub" id="heptext">–</p>
-      <div class="bar"><i class="ice" id="icebar" style="width:0%"></i></div>
-      <p class="sub" id="icetext">–</p>
+    <div class="card"><h2>Sticking to it</h2><h3>Last 14 days</h3>
+      <div class="bar"><i id="hepbar" style="width:0%"></i></div><p class="sub" id="heptext">–</p>
+      <div class="bar"><i class="ice" id="icebar" style="width:0%"></i></div><p class="sub" id="icetext">–</p>
     </div>
     <button class="btn ghost" id="export">Send my log to Dad or the physio</button>
   </section>
 
-  <!-- PLAN -->
   <section class="screen" id="s-plan">
     <div class="card">
-      <h2>Your week</h2>
-      <h3>Set by Liam, physio at Swindon, 3 Sept</h3>
+      <h2>Your week</h2><h3>Updated by Liam, 17 September</h3>
       <div class="week" id="weekgrid"></div>
-      <p class="sub"><b>Tuesday and Friday</b> — full training session.<br>
-      <b>Sunday</b> — match, 40 minutes maximum.<br>
-      <b>Every other day</b> — exercises only, and one of them properly off.</p>
+      <p class="sub"><b>Tuesday and Friday</b> — football training.<br>
+      <b>Sunday</b> — match, up to 60 minutes.<br>
+      <b>Monday</b> — school rugby, modified: no scrums, rucks, tackling or full match play.<br>
+      <b>Thursday</b> — taekwondo, technical work rather than repeated kicking.<br>
+      <b>Wednesday and Saturday</b> — clear. Keep at least one of them properly empty.</p>
     </div>
-
     <div class="card">
-      <h2>40-minute match cap</h2>
-      <h3>Two weeks from 3 September</h3>
+      <h2>Next review</h2><h3>Liam, 8 October</h3>
       <div class="count"><b id="capdays">–</b><span class="sub" id="caplabel">days to go</span></div>
       <div class="bar"><i id="capbar" style="width:0%"></i></div>
       <p class="sub" id="captext">–</p>
     </div>
-
     <div class="card">
       <h2>How it is going</h2>
       <div class="bar"><i id="gbar" style="width:0%"></i></div>
       <p class="sub" id="gtext">–</p>
-      <p class="sub" style="margin-top:10px">Green days do not mean you add minutes on your own. The cap comes off when the physio says so — take these numbers to the review and let him decide.</p>
+      <p class="sub" style="margin-top:10px">Sixty minutes is the allowance, and there is room to go past it if a game really needs it. That is a decision for the coaches and Dad on the day, not something to push for.</p>
     </div>
-
     <div class="card">
       <h2>The four rules</h2>
       <p><b>Never nothing to everything.</b> After a break, build back over about four weeks.</p>
-      <p><b>Extras count.</b> A 1:1 or an hour shooting in the garden is training. Log it.</p>
-      <p><b>One full day off, every week.</b> That is when the repair happens.</p>
+      <p><b>Extras count.</b> Rugby, taekwondo and shooting in the garden all go in the weekly total.</p>
+      <p><b>Keep a day properly off.</b> That is when the repair happens.</p>
       <p><b>Do the boring exercises.</b> They are the only part that raises the ceiling.</p>
     </div>
   </section>
 
-  <!-- REHAB -->
   <section class="screen" id="s-rehab">
     <div class="card">
-      <h2 id="exname">Inner range quads</h2>
-      <h3 id="exsub">10 reps · hold 5 seconds</h3>
-      <div class="clock" id="exclock">0:05</div>
-      <div class="phase" id="exphase">Rep 1 of 10</div>
+      <h2 id="exname">Wall squat</h2>
+      <h3 id="exsub">3 sets · hold 30 seconds · each leg</h3>
+      <div class="sides" id="sides">
+        <button class="side on" data-side="L">Left leg</button>
+        <button class="side" data-side="R">Right leg</button>
+      </div>
+      <div class="clock" id="exclock">0:30</div>
+      <div class="phase" id="exphase">Set 1 of 3</div>
       <button class="btn" id="exstart">Start</button>
       <div style="height:8px"></div>
       <button class="btn ghost" id="exreset">Reset</button>
       <p class="sub" id="exnote" style="margin-top:14px"></p>
     </div>
-
     <div class="card">
-      <h2>Today's three</h2>
-      <h3>Once a day, any order</h3>
+      <h2>Today's three</h2><h3>Four days a week, on days without football</h3>
       <div id="exlist"></div>
+      <p class="sub" style="margin-top:12px">Build up to 30 seconds. Starting nearer 15 and adding time each week is the point — do not jump straight to the longest hold.</p>
     </div>
-
     <div class="card">
-      <h2>Ice after training</h2>
-      <h3>3 rounds · 10 minutes on, 10 minutes off</h3>
+      <h2>Ice after training</h2><h3>3 rounds · 10 minutes on, 10 minutes off</h3>
       <div class="clock" id="iceclock">10:00</div>
       <div class="phase" id="icephase">Round 1 · ice on</div>
       <button class="btn ice" id="icestart">Start ice</button>
       <div style="height:8px"></div>
       <button class="btn ghost" id="icereset">Reset</button>
-      <p class="sub" style="margin-top:14px">Wrap the pack in a thin towel — never straight on the skin. Sit with the leg out straight. Skip it if the skin is still cold from the last round.</p>
+      <p class="sub" style="margin-top:14px">Wrap the pack in a thin towel — never straight on the skin.</p>
     </div>
   </section>
 
-  <!-- WHY -->
   <section class="screen" id="s-why">
     <div class="card">
       <h2>Why it started when it did</h2><h3>Drag along your summer</h3>
-      <svg viewBox="0 0 340 200" role="img" aria-label="Chart comparing what your knee could handle against how hard you loaded it across the summer">
+      <svg viewBox="0 0 340 200" role="img" aria-label="Chart comparing what your knee could handle against how hard you loaded it">
         <line x1="30" y1="158" x2="330" y2="158" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
         <g id="bars"></g>
         <path id="tol" fill="none" stroke="var(--pitch)" stroke-width="3" stroke-linejoin="round"/>
@@ -270,7 +241,7 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
         <text x="30" y="180" font-size="10" fill="currentColor" opacity=".6">Season ends</text>
         <text x="330" y="180" font-size="10" fill="currentColor" opacity=".6" text-anchor="end">Now</text>
       </svg>
-      <input type="range" id="scrub" min="0" max="10" value="0" step="1" aria-label="Move through the summer week by week">
+      <input type="range" id="scrub" min="0" max="11" value="0" step="1" aria-label="Move through the weeks">
       <div class="cap" id="cap"></div>
       <div class="legend"><span><i class="sw" style="background:var(--pitch)"></i>What your knee could handle</span><span><i class="sw" style="background:var(--muted)"></i>What you asked of it</span></div>
     </div>
@@ -278,11 +249,11 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
       <h2 style="font-family:var(--sans)">What the bump actually is</h2>
       <p>Your thigh muscle pulls on your kneecap, the kneecap pulls on a tendon, and that tendon anchors into a small bump on the top of your shin. On a 12-year-old that anchor is not finished bone yet — it is a growth plate, still soft and still building.</p>
       <p>So the tendon is pulling hard on a construction site. That tug is the ache. It is called Osgood-Schlatter, roughly 1 in 10 sporty teenagers get it, and it is not damage. It is an area being asked for more than it can currently give.</p>
-      <p>It can grumble on for a year or more and flares when you have a growth spurt. That is normal, and it is not going backwards. The aim is not a knee that never aches — it is playing a full season without ever having to stop.</p>
+      <p>Stairs are the thing most likely to remind you it is there, and that is normal — going up and down loads exactly that spot. Keep using them.</p>
     </div>
     <div class="flag">
       <h2>Tell someone straight away if…</h2>
-      <p class="sub" style="color:inherit">You feel a sudden pop while striking or landing, and afterwards you cannot straighten your leg or put weight on it. Stop, do not walk it off, say so immediately. It is rare, and it is a different thing from this.</p>
+      <p class="sub" style="color:inherit">You feel a sudden pop in the knee while jumping or kicking, and afterwards you cannot straighten your leg or put weight on it. Stop, do not walk it off, say so immediately. It is rare, and it is a different thing from this.</p>
     </div>
   </section>
 </main>
@@ -300,249 +271,243 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
 const KEY='knee-app-v1';
 const Store={
   async get(){
-    if(window.storage){ try{ const r=await window.storage.get(KEY); return r&&r.value?JSON.parse(r.value):null; }catch(e){ return null; } }
-    try{ const v=localStorage.getItem(KEY); return v?JSON.parse(v):null; }catch(e){ return null; }
+    if(window.storage){try{const r=await window.storage.get(KEY);return r&&r.value?JSON.parse(r.value):null;}catch(e){return null;}}
+    try{const v=localStorage.getItem(KEY);return v?JSON.parse(v):null;}catch(e){return null;}
   },
   async set(o){
     const s=JSON.stringify(o);
-    if(window.storage){ try{ await window.storage.set(KEY,s); return true; }catch(e){ return false; } }
-    try{ localStorage.setItem(KEY,s); return true; }catch(e){ return false; }
+    if(window.storage){try{await window.storage.set(KEY,s);return true;}catch(e){return false;}}
+    try{localStorage.setItem(KEY,s);return true;}catch(e){return false;}
   }
 };
-
-let db={entries:{}, step:1};
-const ACTS=['Rest','Training','Match','Shooting','Gym'];
+let db={entries:{}};
+const ACTS=['Rest','Football','Match','Rugby','Taekwondo'];
 let act=null;
-
 const $=id=>document.getElementById(id);
-const key=d=>{const x=new Date(d); x.setMinutes(x.getMinutes()-x.getTimezoneOffset()); return x.toISOString().slice(0,10);};
+const key=d=>{const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10);};
 const today=()=>key(new Date());
-const dayBack=n=>{const d=new Date(); d.setDate(d.getDate()-n); return d;};
-const band=v=> v<=3?'green' : v<=5?'amber' : 'red';
-const buzz=ms=>{ try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} };
-function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),1900); }
+const dayBack=n=>{const d=new Date();d.setDate(d.getDate()-n);return d;};
+const band=v=>v<=3?'green':v<=5?'amber':'red';
+const buzz=m=>{try{navigator.vibrate&&navigator.vibrate(m);}catch(e){}};
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1900);}
 
-/* ---- the physio's prescription ---- */
-const CAP_START=new Date('2026-09-03T00:00:00');
-const CAP_END=new Date('2026-09-17T00:00:00');
+const PLAN_START=new Date('2026-09-17T00:00:00');
+const REVIEW=new Date('2026-10-08T00:00:00');
 const SCHED={
-  0:{k:'match', t:'Match day — 40 minutes maximum', n:'Forty minutes is the whole allowance, warm-up shooting included. Ice when you get home.'},
-  1:{k:'rest',  t:'Exercises only', n:'No football today. Do your three and stretch your quads.'},
-  2:{k:'train', t:'Training — full session', n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
-  3:{k:'rest',  t:'Exercises only', n:'No football today. Do your three and stretch your quads.'},
-  4:{k:'rest',  t:'Full day off', n:'Nothing at all today, not even the garden. This is the day the repair happens.'},
-  5:{k:'train', t:'Training — full session', n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
-  6:{k:'rest',  t:'Exercises only', n:'Rest ahead of tomorrow. Do your three, then leave it alone.'}
+ 0:{k:'match',t:'Match day — up to 60 minutes',n:'Sixty minutes is the allowance. No taekwondo afterwards. Ice when you get home.'},
+ 1:{k:'other',t:'School rugby — modified',n:'No scrums, rucks, tackling or full match play. Handling, passing and running are all fine. Exercises today too.'},
+ 2:{k:'train',t:'Football training',n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
+ 3:{k:'rest',t:'Exercises day',n:'No football today. Do your three, both legs, and stretch your quads.'},
+ 4:{k:'other',t:'Taekwondo — technical',n:'Patterns and technique rather than repeated kicking. Exercises today too.'},
+ 5:{k:'train',t:'Football training',n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
+ 6:{k:'rest',t:'Exercises day',n:'Clear day. Do your three, then rest ahead of tomorrow.'}
 };
 
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id==='s-'+b.dataset.s));
+  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id==='s-'+b.dataset.s));
   window.scrollTo(0,0);
-  if(b.dataset.s==='trend') drawTrend();
-  if(b.dataset.s==='plan') drawPlan();
+  if(b.dataset.s==='trend')drawTrend();
+  if(b.dataset.s==='plan')drawPlan();
 }));
 
 $('datestr').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'});
 const hr=new Date().getHours();
-$('hi').textContent = hr<11?'Morning, Dotun' : hr<18?'Afternoon, Dotun' : 'Evening, Dotun';
+$('hi').textContent=hr<11?'Morning, Dotun':hr<18?'Afternoon, Dotun':'Evening, Dotun';
 
 function paintToday(){
   const s=SCHED[new Date().getDay()];
-  $('tplan').textContent=s.t;
-  $('tnote').textContent=s.n;
-  $('tice').style.display = s.k==='rest' ? 'none' : 'flex';
+  $('tplan').textContent=s.t;$('tnote').textContent=s.n;
+  $('tice').style.display=(s.k==='train'||s.k==='match')?'flex':'none';
 }
-
 ACTS.forEach(a=>{
   const b=document.createElement('button');
-  b.className='chip'; b.textContent=a; b.dataset.a=a;
-  b.addEventListener('click',()=>{ act = act===a?null:a; paintChips(); buzz(8); });
+  b.className='chip';b.textContent=a;b.dataset.a=a;
+  b.addEventListener('click',()=>{act=act===a?null:a;paintChips();buzz(8);});
   $('acts').appendChild(b);
 });
-const paintChips=()=>document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on', c.dataset.a===act));
-const colorFor=v=> v<=3?'var(--green)': v<=5?'var(--amber)':'var(--red)';
+const paintChips=()=>document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.a===act));
+const colorFor=v=>v<=3?'var(--green)':v<=5?'var(--amber)':'var(--red)';
 function bindSlider(sl,out){
-  const paint=()=>{const v=+sl.value; out.textContent=v; out.style.color=colorFor(v); sl.style.color=colorFor(v);};
-  sl.addEventListener('input',()=>{paint(); buzz(5);}); paint();
+  const paint=()=>{const v=+sl.value;out.textContent=v;out.style.color=colorFor(v);sl.style.color=colorFor(v);};
+  sl.addEventListener('input',()=>{paint();buzz(5);});paint();
 }
-bindSlider($('lsl'),$('lval')); bindSlider($('rsl'),$('rval'));
+bindSlider($('lsl'),$('lval'));bindSlider($('rsl'),$('rval'));
 
 const ACTION={
-  green:{tag:'GREEN',head:'Good to go',body:'Follow the plan for today exactly as it stands. Keep banking these — they are what the physio decides the next step from.'},
-  amber:{tag:'AMBER',head:'Play, but dial it back',body:'Still train, but halve the shooting and jumping and skip any extras. Tell your coach before the session, not after.'},
-  red:{tag:'RED',head:'Ease right off',body:'Technical and low-impact work only, and tell Dad and the physio today. This is not an injury and not the end of your season — it is the knee asking for a smaller ask.'}
+ green:{tag:'GREEN',head:'Good to go',body:'Follow the plan for today as it stands. Keep banking these — they are what Liam decides the next step from.'},
+ amber:{tag:'AMBER',head:'Play, but dial it back',body:'Still train, but halve the shooting and jumping and skip any extras. Tell your coach before the session, not after.'},
+ red:{tag:'RED',head:'Ease right off',body:'Technical and low-impact work only, and tell Dad and Liam today. This is not an injury and not the end of your season — it is the knee asking for a smaller ask.'}
 };
-
 function renderVerdict(){
-  const e=db.entries[today()], w=$('verdictwrap');
-  if(!e){ w.innerHTML=''; return; }
-  const b=band(Math.max(e.l,e.r)), a=ACTION[b];
+  const e=db.entries[today()],w=$('verdictwrap');
+  if(!e||e.l===undefined){w.innerHTML='';return;}
+  const b=band(Math.max(e.l,e.r)),a=ACTION[b];
   w.innerHTML='<div class="verdict '+b+'"><div class="tag">'+a.tag+'</div><h2>'+a.head+'</h2><p class="sub" style="color:inherit">'+a.body+'</p><p class="sub" style="margin-top:10px">Saved: left '+e.l+', right '+e.r+(e.act?' · yesterday: '+e.act.toLowerCase():'')+'</p></div>';
 }
-
 function paintTicks(){
   const e=db.entries[today()]||{};
-  $('thep').classList.toggle('on', !!e.hep);
-  $('tice').classList.toggle('on', !!e.ice);
+  $('thep').classList.toggle('on',!!e.hep);
+  $('tice').classList.toggle('on',!!e.ice);
 }
-async function toggle(field){
-  const k=today();
-  db.entries[k]=db.entries[k]||{l:0,r:0,act:null};
-  db.entries[k][field]=!db.entries[k][field];
-  paintTicks(); buzz(12); await Store.set(db);
+async function toggle(f){
+  const k=today();db.entries[k]=db.entries[k]||{};
+  db.entries[k][f]=!db.entries[k][f];
+  paintTicks();buzz(12);await Store.set(db);
 }
 $('thep').addEventListener('click',()=>toggle('hep'));
 $('tice').addEventListener('click',()=>toggle('ice'));
-
-$('save').addEventListener('click', async ()=>{
-  const k=today(), prev=db.entries[k]||{};
-  db.entries[k]={l:+$('lsl').value, r:+$('rsl').value, act:act, hep:!!prev.hep, ice:!!prev.ice};
-  renderVerdict(); buzz(18);
+$('save').addEventListener('click',async()=>{
+  const k=today(),prev=db.entries[k]||{};
+  db.entries[k]={l:+$('lsl').value,r:+$('rsl').value,act:act,hep:!!prev.hep,ice:!!prev.ice};
+  renderVerdict();buzz(18);
   const ok=await Store.set(db);
   toast(ok?'Saved':'Saved on screen only — storage blocked');
 });
 
-/* ---- trend ---- */
 function drawTrend(){
-  const days=[]; for(let i=13;i>=0;i--) days.push(dayBack(i));
-  const strip=$('strip'); strip.innerHTML='';
+  const days=[];for(let i=13;i>=0;i--)days.push(dayBack(i));
+  const strip=$('strip');strip.innerHTML='';
   days.forEach(d=>{
-    const e=db.entries[key(d)], el=document.createElement('div');
-    el.className='day'+(e&&e.l!==undefined&&(e.l||e.r||e.act||e.l===0)?' '+band(Math.max(e.l,e.r)):'');
-    el.textContent=d.getDate(); strip.appendChild(el);
+    const e=db.entries[key(d)],el=document.createElement('div');
+    el.className='day'+(e&&e.l!==undefined?' '+band(Math.max(e.l,e.r)):'');
+    el.textContent=d.getDate();strip.appendChild(el);
   });
-  let streak=0; for(let i=0;i<400;i++){ if(db.entries[key(dayBack(i))]) streak++; else { if(i===0) continue; break; } }
-  const last7=[]; for(let i=0;i<7;i++){ const e=db.entries[key(dayBack(i))]; if(e) last7.push(e); }
+  let streak=0;for(let i=0;i<400;i++){const e=db.entries[key(dayBack(i))];if(e&&e.l!==undefined)streak++;else{if(i===0)continue;break;}}
+  const last7=[];for(let i=0;i<7;i++){const e=db.entries[key(dayBack(i))];if(e&&e.l!==undefined)last7.push(e);}
   const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
   const avg=last7.length?(last7.reduce((s,e)=>s+e.l,0)/last7.length).toFixed(1):'–';
-  $('st-streak').textContent=streak; $('st-green').textContent=greens; $('st-avg').textContent=avg;
-
+  $('st-streak').textContent=streak;$('st-green').textContent=greens;$('st-avg').textContent=avg;
   const X0=26,X1=330,Y0=142,Y1=16;
-  const px=i=>X0+(X1-X0)*(i/13), py=v=>Y0-(Y0-Y1)*(v/10);
+  const px=i=>X0+(X1-X0)*(i/13),py=v=>Y0-(Y0-Y1)*(v/10);
   let g='';
-  for(let v=0;v<=10;v+=5) g+='<line x1="'+X0+'" y1="'+py(v)+'" x2="'+X1+'" y2="'+py(v)+'" stroke="currentColor" opacity=".14"/><text x="'+(X0-6)+'" y="'+(py(v)+4)+'" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">'+v+'</text>';
-  const path=side=>{let d='',open=false; days.forEach((dd,i)=>{const e=db.entries[key(dd)]; if(e&&e[side]!==undefined){d+=(open?'L':'M')+px(i)+' '+py(e[side]); open=true;} else open=false;}); return d;};
-  let dots=''; days.forEach((dd,i)=>{const e=db.entries[key(dd)]; if(e&&e.l!==undefined) dots+='<circle cx="'+px(i)+'" cy="'+py(e.l)+'" r="3" fill="var(--pitch)"/>';});
+  for(let v=0;v<=10;v+=5)g+='<line x1="'+X0+'" y1="'+py(v)+'" x2="'+X1+'" y2="'+py(v)+'" stroke="currentColor" opacity=".14"/><text x="'+(X0-6)+'" y="'+(py(v)+4)+'" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">'+v+'</text>';
+  const path=side=>{let d='',open=false;days.forEach((dd,i)=>{const e=db.entries[key(dd)];if(e&&e[side]!==undefined){d+=(open?'L':'M')+px(i)+' '+py(e[side]);open=true;}else open=false;});return d;};
+  let dots='';days.forEach((dd,i)=>{const e=db.entries[key(dd)];if(e&&e.l!==undefined)dots+='<circle cx="'+px(i)+'" cy="'+py(e.l)+'" r="3" fill="var(--pitch)"/>';});
   $('line').innerHTML=g+'<path d="'+path('r')+'" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round"/><path d="'+path('l')+'" fill="none" stroke="var(--pitch)" stroke-width="2.6" stroke-linejoin="round"/>'+dots+'<text x="'+X0+'" y="162" font-size="10" fill="currentColor" opacity=".5">14 days ago</text><text x="'+X1+'" y="162" font-size="10" fill="currentColor" opacity=".5" text-anchor="end">today</text>';
-
-  const hepDone=days.filter(d=>(db.entries[key(d)]||{}).hep).length;
+  const hepDays=days.filter(d=>[1,3,4,6].includes(d.getDay()));
+  const hepDone=hepDays.filter(d=>(db.entries[key(d)]||{}).hep).length;
   const iceDays=days.filter(d=>[0,2,5].includes(d.getDay()));
   const iceDone=iceDays.filter(d=>(db.entries[key(d)]||{}).ice).length;
-  $('hepbar').style.width=(hepDone/14*100)+'%';
-  $('heptext').textContent='Exercises done on '+hepDone+' of the last 14 days.';
+  $('hepbar').style.width=(hepDays.length?hepDone/hepDays.length*100:0)+'%';
+  $('heptext').textContent='Exercises done on '+hepDone+' of '+hepDays.length+' exercise days.';
   $('icebar').style.width=(iceDays.length?iceDone/iceDays.length*100:0)+'%';
   $('icetext').textContent='Ice done after '+iceDone+' of '+iceDays.length+' training and match days.';
 }
-
-$('export').addEventListener('click', async ()=>{
+$('export').addEventListener('click',async()=>{
   const rows=['date,left,right,band,yesterday,exercises,ice'];
   Object.keys(db.entries).sort().slice(-28).forEach(k=>{const e=db.entries[k];
-    rows.push(k+','+(e.l??'')+','+(e.r??'')+','+(e.l!==undefined?band(Math.max(e.l,e.r)):'')+','+(e.act||'')+','+(e.hep?'y':'n')+','+(e.ice?'y':'n'));});
-  const txt='Dotun knee log\nPlan: Tue + Fri full training, Sun match 40 min cap to 17 Sep, ice after training, HEP daily.\n\n'+rows.join('\n');
+    rows.push(k+','+(e.l!==undefined?e.l:'')+','+(e.r!==undefined?e.r:'')+','+(e.l!==undefined?band(Math.max(e.l,e.r)):'')+','+(e.act||'')+','+(e.hep?'y':'n')+','+(e.ice?'y':'n'));});
+  const txt='Dotun knee log\nPlan from 17 Sep: football Tue + Fri, Sunday match up to 60 min, modified rugby Mon, technical taekwondo Thu. Exercises 4x/week. Review 8 Oct.\n\n'+rows.join('\n');
   try{
-    if(navigator.share){ await navigator.share({title:'Knee log', text:txt}); return; }
-    await navigator.clipboard.writeText(txt); toast('Copied — paste it into a message');
-  }catch(e){ toast('Could not share that'); }
+    if(navigator.share){await navigator.share({title:'Knee log',text:txt});return;}
+    await navigator.clipboard.writeText(txt);toast('Copied — paste it into a message');
+  }catch(e){toast('Could not share that');}
 });
 
-/* ---- plan ---- */
 function drawPlan(){
-  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], order=[1,2,3,4,5,6,0];
-  const todayDow=new Date().getDay();
+  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],order=[1,2,3,4,5,6,0];
+  const dow=new Date().getDay();
+  const LABEL={0:'60 min',1:'Rugby',2:'Football',3:'Clear',4:'Taekwondo',5:'Football',6:'Clear'};
   $('weekgrid').innerHTML=order.map(d=>{
     const s=SCHED[d];
-    const label = s.k==='match' ? '40 min' : s.k==='train' ? 'Full' : (d===4?'Off':'Exercises');
-    return '<div class="wd '+s.k+(d===todayDow?' now':'')+'"><b>'+names[d]+'</b>'+label+'</div>';
+    return '<div class="wd '+(s.k==='rest'?'':s.k)+(d===dow?' now':'')+'"><b>'+names[d]+'</b>'+LABEL[d]+'</div>';
   }).join('');
-
   const msDay=86400000;
-  const left=Math.max(0, Math.ceil((CAP_END-new Date())/msDay));
-  const total=Math.round((CAP_END-CAP_START)/msDay);
+  const left=Math.max(0,Math.ceil((REVIEW-new Date())/msDay));
+  const total=Math.round((REVIEW-PLAN_START)/msDay);
   $('capdays').textContent=left;
-  $('caplabel').textContent = left===1?'day to go':'days to go';
+  $('caplabel').textContent=left===1?'day to go':'days to go';
   $('capbar').style.width=Math.min(100,Math.max(0,(total-left)/total*100))+'%';
-  $('captext').textContent = left>0
-    ? 'Forty minutes maximum on Sundays until 17 September, then the physio reviews it. Warm-up shooting counts inside the forty.'
-    : 'The two weeks are up. Do not add minutes yourself — take your scores to the physio and let him set the next step.';
-
-  const last7=[]; for(let i=0;i<7;i++){const e=db.entries[key(dayBack(i))]; if(e&&e.l!==undefined) last7.push(e);}
+  $('captext').textContent=left>0
+    ? 'Keep scoring every morning. The numbers you bank between now and then are what the next step is decided from.'
+    : 'Review time. Take your scores to Liam and let him set the next block.';
+  const last7=[];for(let i=0;i<7;i++){const e=db.entries[key(dayBack(i))];if(e&&e.l!==undefined)last7.push(e);}
   const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
-  $('gbar').style.width=(last7.length?greens/7*100:0)+'%';
+  $('gbar').style.width=(greens/7*100)+'%';
   $('gtext').textContent=greens+' green '+(greens===1?'day':'days')+' out of the last 7 scored.';
 }
 
-/* ---- exercises ---- */
 const EX=[
-  {id:'irq', name:'Inner range quads', reps:10, hold:5, sub:'10 reps · hold 5 seconds',
-   note:'Towel rolled under the knee. Squeeze the thigh, press the knee down into the towel and lift the foot off the floor. Lower under control.'},
-  {id:'ws', name:'Wall squat', reps:3, hold:30, sub:'3 reps · hold 30 seconds',
-   note:'Back flat to the wall, feet shoulder-width and out in front. Slide down to about 45 degrees at the knee and hold. Push back up through the heels.'},
-  {id:'slr', name:'Straight leg raise', reps:10, hold:5, sub:'10 reps · hold 5 seconds',
-   note:'Lying flat, other knee bent. Toes pulled back, knee locked straight, lift only a few inches. Low and controlled beats high.'}
+ {id:'ws',name:'Wall squat',sets:3,hold:30,perLeg:true,sub:'3 sets · hold up to 30 seconds · each leg',
+  note:'Back flat to the wall, one foot planted out in front, the other off the floor. Slide down until the working knee and hip are bent to about 90 degrees, shin vertical. Hold, then push back up. Start nearer 15 seconds and build.'},
+ {id:'br',name:'Single-leg bridge',sets:10,hold:5,perLeg:true,sub:'10 reps · hold 5 seconds · each leg',
+  note:'On your back, arms by your sides, one knee bent and that foot flat. Straighten the other leg, tighten your stomach, lift your hips until body and leg are in a straight line. Squeeze the glutes, hold, lower slowly.'},
+ {id:'bd',name:'Band knee extensions',sets:3,reps:8,hold:2,perLeg:true,sub:'3 sets of 8 · each leg',
+  note:'Band looped round both ankles, sitting upright. Straighten one knee as far as it goes while the other stays put. Hold briefly, then lower slowly — the slow lower is the part that counts.'}
 ];
-let exi=0, exRep=1, exLeft=EX[0].hold, exTick=null, exResting=false;
+let exi=0,exSide='L',exSet=1,exRep=1,exLeft=EX[0].hold,exTick=null,exResting=false;
 const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
-
+function exPhase(){
+  const e=EX[exi],side=exSide==='L'?'Left':'Right';
+  if(exResting)return 'Rest · '+side;
+  if(e.reps)return side+' · set '+exSet+' of '+e.sets+' · rep '+exRep+' of '+e.reps;
+  if(e.id==='br')return side+' · rep '+exSet+' of '+e.sets;
+  return side+' · set '+exSet+' of '+e.sets;
+}
 function paintEx(){
   const e=EX[exi];
-  $('exname').textContent=e.name; $('exsub').textContent=e.sub; $('exnote').textContent=e.note;
-  $('exclock').textContent=fmt(exLeft);
-  $('exphase').textContent = exResting ? 'Rest' : 'Rep '+exRep+' of '+e.reps;
-  document.querySelectorAll('[data-ex]').forEach(b=>b.classList.toggle('now', +b.dataset.ex===exi));
+  $('exname').textContent=e.name;$('exsub').textContent=e.sub;$('exnote').textContent=e.note;
+  $('exclock').textContent=fmt(exLeft);$('exphase').textContent=exPhase();
+  document.querySelectorAll('.side').forEach(b=>b.classList.toggle('on',b.dataset.side===exSide));
 }
-function stopEx(){ clearInterval(exTick); exTick=null; $('exstart').textContent='Start'; }
-function loadEx(i){ stopEx(); exi=i; exRep=1; exResting=false; exLeft=EX[i].hold; paintEx(); window.scrollTo(0,0); }
-
-$('exlist').innerHTML=EX.map((e,i)=>'<div class="ex"><div class="exhead"><b>'+e.name+'</b><span>'+e.sub+'</span></div><div style="height:8px"></div><button class="btn ghost" data-ex="'+i+'">Do this one</button></div>').join('');
+function stopEx(){clearInterval(exTick);exTick=null;$('exstart').textContent='Start';}
+function loadEx(i){stopEx();exi=i;exSet=1;exRep=1;exResting=false;exLeft=EX[i].hold;paintEx();window.scrollTo(0,0);}
+$('exlist').innerHTML=EX.map((e,i)=>'<div class="ex"><div class="exhead"><b>'+e.name+'</b><span>'+(e.reps?e.sets+' x '+e.reps:e.sets+' x '+e.hold+'s')+'</span></div><div style="height:8px"></div><button class="btn ghost" data-ex="'+i+'">Do this one</button></div>').join('');
 document.querySelectorAll('[data-ex]').forEach(b=>b.addEventListener('click',()=>loadEx(+b.dataset.ex)));
-
+document.querySelectorAll('.side').forEach(b=>b.addEventListener('click',()=>{exSide=b.dataset.side;stopEx();exSet=1;exRep=1;exResting=false;exLeft=EX[exi].hold;paintEx();buzz(8);}));
 $('exstart').addEventListener('click',()=>{
-  if(exTick){ stopEx(); return; }
+  if(exTick){stopEx();return;}
   $('exstart').textContent='Pause';
   exTick=setInterval(()=>{
-    exLeft--; paintEx();
+    exLeft--;paintEx();
     if(exLeft<=0){
-      buzz(exResting?60:[100,60,100]);
       const e=EX[exi];
-      if(exResting){ exResting=false; exLeft=e.hold; }
-      else if(exRep<e.reps){ exRep++; exResting=true; exLeft=3; }
-      else{ stopEx(); exResting=false; exRep=1; exLeft=e.hold;
-            $('exphase').textContent='Done — '+e.name+' finished'; buzz([150,80,150]);
-            if(exi<EX.length-1) toast('Next: '+EX[exi+1].name); return; }
+      buzz(exResting?60:[100,60,100]);
+      if(exResting){exResting=false;exLeft=e.hold;paintEx();return;}
+      if(e.reps){
+        if(exRep<e.reps){exRep++;exResting=true;exLeft=2;}
+        else if(exSet<e.sets){exSet++;exRep=1;exResting=true;exLeft=30;}
+        else{finishEx();return;}
+      } else {
+        if(exSet<e.sets){exSet++;exResting=true;exLeft=e.id==='br'?3:30;}
+        else{finishEx();return;}
+      }
       paintEx();
     }
   },1000);
 });
-$('exreset').addEventListener('click',()=>{ stopEx(); exRep=1; exResting=false; exLeft=EX[exi].hold; paintEx(); });
+function finishEx(){
+  const e=EX[exi];stopEx();exResting=false;exSet=1;exRep=1;exLeft=e.hold;
+  $('exphase').textContent='Done — '+e.name+', '+(exSide==='L'?'left':'right')+' leg';
+  buzz([150,80,150]);
+  if(exSide==='L')toast('Now the right leg');
+  else if(exi<EX.length-1)toast('Next: '+EX[exi+1].name);
+}
+$('exreset').addEventListener('click',()=>{stopEx();exSet=1;exRep=1;exResting=false;exLeft=EX[exi].hold;paintEx();});
 paintEx();
 
-/* ---- ice ---- */
-let iceRound=1, iceOn=true, iceLeft=600, iceTick=null;
-function paintIce(){
-  $('iceclock').textContent=fmt(iceLeft);
-  $('icephase').textContent='Round '+iceRound+' · '+(iceOn?'ice on':'ice off');
-}
+let iceRound=1,iceOn=true,iceLeft=600,iceTick=null;
+function paintIce(){$('iceclock').textContent=fmt(iceLeft);$('icephase').textContent='Round '+iceRound+' · '+(iceOn?'ice on':'ice off');}
 $('icestart').addEventListener('click',()=>{
-  if(iceTick){ clearInterval(iceTick); iceTick=null; $('icestart').textContent='Resume'; return; }
+  if(iceTick){clearInterval(iceTick);iceTick=null;$('icestart').textContent='Resume';return;}
   $('icestart').textContent='Pause';
   iceTick=setInterval(()=>{
-    iceLeft--; paintIce();
+    iceLeft--;paintIce();
     if(iceLeft<=0){
       buzz([200,100,200]);
-      if(iceOn){ iceOn=false; iceLeft=600; }
-      else if(iceRound<3){ iceRound++; iceOn=true; iceLeft=600; }
-      else{ clearInterval(iceTick); iceTick=null; $('icestart').textContent='Start ice';
-            $('iceclock').textContent='Done'; $('icephase').textContent='All three rounds finished';
-            iceRound=1; iceOn=true; iceLeft=600; toast('Tick it off on the Today screen'); return; }
+      if(iceOn){iceOn=false;iceLeft=600;}
+      else if(iceRound<3){iceRound++;iceOn=true;iceLeft=600;}
+      else{clearInterval(iceTick);iceTick=null;$('icestart').textContent='Start ice';
+        $('iceclock').textContent='Done';$('icephase').textContent='All three rounds finished';
+        iceRound=1;iceOn=true;iceLeft=600;toast('Tick it off on the Today screen');return;}
       paintIce();
     }
   },1000);
 });
-$('icereset').addEventListener('click',()=>{ clearInterval(iceTick); iceTick=null; iceRound=1; iceOn=true; iceLeft=600; paintIce(); $('icestart').textContent='Start ice'; });
+$('icereset').addEventListener('click',()=>{clearInterval(iceTick);iceTick=null;iceRound=1;iceOn=true;iceLeft=600;paintIce();$('icestart').textContent='Start ice';});
 paintIce();
 
-/* ---- why chart ---- */
 const WEEKS=[
  {t:85,l:72,ti:'Season ends',tx:'Peak condition. Months of training had built your knee up to handle everything a match threw at it.'},
  {t:78,l:8,ti:'Holiday, week 1',tx:'You stop. Within days the ceiling starts dropping — tendons and growth plates lose capacity when nothing is asking anything of them.'},
@@ -554,35 +519,35 @@ const WEEKS=[
  {t:46,l:64,ti:'1:1 session',tx:'Straight into a full-intensity striker session. Repeated shooting and stopping — the two heaviest things you can do to that bump.'},
  {t:45,l:74,ti:'1:1 again, four days later',tx:'A second big session before anything had recovered. The ask goes clean over the ceiling, and the left knee says stop.',ouch:1},
  {t:48,l:4,ti:'Rest week',tx:'Pain settles fast. Good sign — but the ceiling is still low, so going straight back at 100% would just repeat the whole thing.'},
- {t:54,l:30,ti:'Now — two sessions a week',tx:'Two full sessions and forty minutes on Sunday. Less football than you want, on purpose: it is the amount your knee can turn into a higher ceiling instead of another flare.'}
+ {t:58,l:34,ti:'Two weeks of managed load',tx:'Two sessions a week and forty capped minutes. Less football than you wanted, on purpose — and the ceiling starts climbing again.'},
+ {t:70,l:52,ti:'Now',tx:'Sixty minutes with no pain, a full session sprinting freely, and exercises that have got harder on purpose. The gap has closed because you let it.'}
 ];
 const CX0=30,CX1=326,CY0=158,CTOP=20;
-const cpx=i=>CX0+(CX1-CX0)*(i/(WEEKS.length-1)), cpy=v=>CY0-(CY0-CTOP)*(v/100);
-$('bars').innerHTML=WEEKS.map((w,i)=>'<rect x="'+(cpx(i)-8)+'" y="'+cpy(w.l)+'" width="16" height="'+Math.max(CY0-cpy(w.l),2)+'" rx="3" fill="var(--muted)" opacity=".45"/>').join('');
+const cpx=i=>CX0+(CX1-CX0)*(i/(WEEKS.length-1)),cpy=v=>CY0-(CY0-CTOP)*(v/100);
+$('bars').innerHTML=WEEKS.map((w,i)=>'<rect x="'+(cpx(i)-7)+'" y="'+cpy(w.l)+'" width="14" height="'+Math.max(CY0-cpy(w.l),2)+'" rx="3" fill="var(--muted)" opacity=".45"/>').join('');
 $('tol').setAttribute('d',WEEKS.map((w,i)=>(i?'L':'M')+cpx(i)+' '+cpy(w.t)).join(' '));
 function paintWhy(i){
-  const w=WEEKS[i], x=cpx(i);
-  $('head').setAttribute('x1',x); $('head').setAttribute('x2',x);
-  $('knob').setAttribute('cx',x); $('knob').setAttribute('cy',cpy(w.t));
+  const w=WEEKS[i],x=cpx(i);
+  $('head').setAttribute('x1',x);$('head').setAttribute('x2',x);
+  $('knob').setAttribute('cx',x);$('knob').setAttribute('cy',cpy(w.t));
   $('ouch').setAttribute('opacity',w.ouch?1:0);
-  if(w.ouch){ $('ouch').setAttribute('cx',x); $('ouch').setAttribute('cy',cpy(w.l)); }
+  if(w.ouch){$('ouch').setAttribute('cx',x);$('ouch').setAttribute('cy',cpy(w.l));}
   $('cap').innerHTML='<b>'+w.ti+'</b>'+w.tx;
 }
-$('scrub').addEventListener('input',e=>{ paintWhy(+e.target.value); buzz(4); });
+$('scrub').addEventListener('input',e=>{paintWhy(+e.target.value);buzz(4);});
 paintWhy(0);
 
-/* ---- boot ---- */
-(async ()=>{
+(async()=>{
   const saved=await Store.get();
-  if(saved){ db.entries=saved.entries||{}; db.step=saved.step||1; }
+  if(saved){db.entries=saved.entries||{};}
   const e=db.entries[today()];
-  if(e && e.l!==undefined){
-    $('lsl').value=e.l; $('rsl').value=e.r; act=e.act||null;
-    $('lsl').dispatchEvent(new Event('input')); $('rsl').dispatchEvent(new Event('input'));
+  if(e&&e.l!==undefined){
+    $('lsl').value=e.l;$('rsl').value=e.r;act=e.act||null;
+    $('lsl').dispatchEvent(new Event('input'));$('rsl').dispatchEvent(new Event('input'));
     $('save').textContent='Update today';
   }
-  paintToday(); paintChips(); renderVerdict(); paintTicks(); drawPlan();
-  if('serviceWorker' in navigator){ try{ navigator.serviceWorker.register('sw.js'); }catch(e){} }
+  paintToday();paintChips();renderVerdict();paintTicks();drawPlan();
+  if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js');}catch(e){}}
 })();
 </script>
 </body>
