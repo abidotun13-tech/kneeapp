@@ -79,6 +79,7 @@ svg{display:block;width:100%;height:auto}
 .wd.train{background:var(--pitch-soft);border-color:var(--pitch)}.wd.train b{color:var(--pitch)}
 .wd.match{background:var(--pitch);border-color:var(--pitch)}.wd.match,.wd.match b{color:#fff}
 .wd.other{background:var(--ice-soft);border-color:var(--ice)}.wd.other b{color:var(--ice)}
+.wd.heavy{background:var(--amber);border-color:var(--amber)}.wd.heavy,.wd.heavy b{color:#fff}
 .wd.now{outline:2.5px solid var(--ink);outline-offset:1px}
 .count{display:flex;align-items:baseline;gap:8px}
 .count b{font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
@@ -179,24 +180,26 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
 
   <section class="screen" id="s-plan">
     <div class="card">
-      <h2>Your week</h2><h3>Updated by Liam, 8 October</h3>
+      <h2>Your week</h2><h3>Updated by Liam, 2 November</h3>
       <div class="week" id="weekgrid"></div>
-      <p class="sub"><b>Sunday</b> &mdash; match, up to 80 minutes. Full game.<br>
-      <b>Tuesday and Friday</b> &mdash; football training, still twice a week.<br>
-      <b>Monday</b> &mdash; school sport.<br>
+      <p class="sub"><b>Sunday</b> &mdash; match, full minutes as you tolerate them.<br>
+      <b>Monday</b> &mdash; touch rugby at school, then academy training. Light at school, so the evening session is the real work.<br>
+      <b>Tuesday and Friday</b> &mdash; academy training. Three sessions a week now.<br>
       <b>Thursday</b> &mdash; taekwondo, technical work rather than repeated kicking.<br>
-      <b>Wednesday and Saturday</b> &mdash; clear. Keep at least one properly empty.</p>
+      <b>Wednesday and Saturday</b> &mdash; clear. Keep them that way.</p>
     </div>
     <div class="card">
-      <h2>Next review</h2><h3>Liam, 2 November</h3>
+      <h2>Next review</h2><h3>Liam, 23 November</h3>
       <div class="count"><b id="capdays">&ndash;</b><span class="sub" id="caplabel">days to go</span></div>
       <div class="bar"><i id="capbar" style="width:0%"></i></div>
       <p class="sub" id="captext">&ndash;</p>
     </div>
     <div class="card">
-      <h2>What is on the table</h2>
-      <p class="sub">On 2 November Liam decides whether football training goes back to <b>three sessions a week</b>. That is the last big step. The scores you bank between now and then are what he decides from &mdash; so the boring morning tap is doing real work right now.</p>
+      <h2>Where you are now</h2>
+      <p class="sub">You have everything back: three sessions a week and full match minutes. That was the goal in August and you got there in ten weeks. Nothing left to earn &mdash; the job now is holding on to it.</p>
       <div class="bar"><i id="gbar" style="width:0%"></i></div>
+      <p class="sub" id="gtext">&ndash;</p>
+    </div>
       <p class="sub" id="gtext">&ndash;</p>
     </div>
     <div class="card">
@@ -205,6 +208,7 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
       <p><b>Extras count.</b> School sport, taekwondo and shooting in the garden all go in the weekly total.</p>
       <p><b>Keep a day properly off.</b> That is when the repair happens.</p>
       <p><b>Do the boring exercises.</b> They are the only part that raises the ceiling.</p>
+      <p><b>Never go back on cold.</b> If you come off, keep moving and re-warm before you return.</p>
     </div>
   </section>
 
@@ -257,7 +261,7 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
         <text x="30" y="180" font-size="10" fill="currentColor" opacity=".6">Season ends</text>
         <text x="330" y="180" font-size="10" fill="currentColor" opacity=".6" text-anchor="end">Now</text>
       </svg>
-      <input type="range" id="scrub" min="0" max="12" value="0" step="1" aria-label="Move through the weeks">
+      <input type="range" id="scrub" min="0" max="15" value="0" step="1" aria-label="Move through the weeks">
       <div class="cap" id="cap"></div>
       <div class="legend"><span><i class="sw" style="background:var(--pitch)"></i>What your knee could handle</span><span><i class="sw" style="background:var(--muted)"></i>What you asked of it</span></div>
     </div>
@@ -266,6 +270,12 @@ nav{position:fixed;left:0;right:0;bottom:0;height:var(--nav);padding-bottom:env(
       <p>Your thigh muscle pulls on your kneecap, the kneecap pulls on a tendon, and that tendon anchors into a small bump on the top of your shin. At your age that anchor is not finished bone yet &mdash; it is a growth plate, still soft and still building.</p>
       <p>So the tendon is pulling hard on a construction site. That tug is the ache. It is called Osgood-Schlatter, roughly 1 in 10 sporty teenagers get it, and it is not damage. It is an area being asked for more than it can currently give.</p>
       <p>Stairs are the thing most likely to remind you it is there, and that is normal &mdash; going up and down loads exactly that spot. Keep using them. The new stretches are aimed at the same thing: as you grow, the front of your thigh gets tight and pulls harder on the bump. Loosening it off takes some of the tug away.</p>
+    </div>
+    <div class="card">
+      <h2>The cold-start trap</h2>
+      <h3>What actually happened on 1 November</h3>
+      <p class="sub">It was not the bump and it was not too much football. You were on and off all day, and muscle goes stiff and less springy as soon as it cools down. Asking a cold, stiff thigh to accelerate is what made your leg feel heavy and slow.</p>
+      <p class="sub">Two things follow. Liam has asked your coaches to leave you on rather than rotating you. And if you ever do come off, keep moving on the touchline and get properly warm again before you go back on &mdash; that one is yours to remember.</p>
     </div>
     <div class="flag">
       <h2>Tell someone straight away if&hellip;</h2>
@@ -307,14 +317,14 @@ const band=v=>v<=3?'green':v<=5?'amber':'red';
 const buzz=m=>{try{navigator.vibrate&&navigator.vibrate(m);}catch(e){}};
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1900);}
 
-const PLAN_START=new Date('2026-10-08T00:00:00');
-const REVIEW=new Date('2026-11-02T00:00:00');
+const PLAN_START=new Date('2026-11-02T00:00:00');
+const REVIEW=new Date('2026-11-23T00:00:00');
 const SCHED={
- 0:{k:'match',t:'Match day — up to 80 minutes',n:'Full game now. No taekwondo afterwards. Ice when you get home.'},
- 1:{k:'other',t:'School sport',n:'Play. Strength exercises today as well if you have not done them.'},
+ 0:{k:'match',t:'Match day \u2014 full minutes',n:'No cap now: play as long as you are moving well. If you do come off, keep moving on the touchline and re-warm before you go back on \u2014 going back on cold is what caught you at the tournament.'},
+ 1:{k:'train',t:'Touch rugby \u002b football training',n:'Touch rugby at school is light, so the academy session tonight is the real work. It does follow a match though, so note how you feel in the morning. Ice afterwards.'},
  2:{k:'train',t:'Football training',n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
- 3:{k:'rest',t:'Exercises day',n:'No football today. Strength, both legs, plus the stretches.'},
- 4:{k:'other',t:'Taekwondo — technical',n:'Patterns and technique rather than repeated kicking. Strength exercises today too.'},
+ 3:{k:'rest',t:'Exercises day',n:'No football today, and you have earned it after three days on. Strength, both legs, plus the stretches.'},
+ 4:{k:'other',t:'Taekwondo \u2014 technical',n:'Patterns and technique rather than repeated kicking. Strength exercises today too.'},
  5:{k:'train',t:'Football training',n:'Full session. Ice afterwards: three rounds, ten on and ten off.'},
  6:{k:'rest',t:'Exercises day',n:'Clear day. Strength plus the stretches, then rest ahead of tomorrow.'}
 };
@@ -334,7 +344,7 @@ $('hi').textContent=hr<11?'Morning, Dotun':hr<18?'Afternoon, Dotun':'Evening, Do
 function paintToday(){
   const s=SCHED[new Date().getDay()];
   $('tplan').textContent=s.t;$('tnote').textContent=s.n;
-  $('tice').style.display=(s.k==='train'||s.k==='match')?'flex':'none';
+  $('tice').style.display=(s.k==='train'||s.k==='match'||s.k==='heavy')?'flex':'none';
 }
 ACTS.forEach(a=>{
   const b=document.createElement('button');
@@ -406,7 +416,7 @@ function drawTrend(){
   const hepDays=days.filter(d=>[1,3,4,6].includes(d.getDay()));
   const hepDone=hepDays.filter(d=>(db.entries[key(d)]||{}).hep).length;
   const flexDone=days.filter(d=>(db.entries[key(d)]||{}).flex).length;
-  const iceDays=days.filter(d=>[0,2,5].includes(d.getDay()));
+  const iceDays=days.filter(d=>[0,1,2,5].includes(d.getDay()));
   const iceDone=iceDays.filter(d=>(db.entries[key(d)]||{}).ice).length;
   $('hepbar').style.width=(hepDays.length?hepDone/hepDays.length*100:0)+'%';
   $('heptext').textContent='Strength done on '+hepDone+' of '+hepDays.length+' exercise days.';
@@ -429,7 +439,7 @@ $('export').addEventListener('click',async()=>{
 function drawPlan(){
   const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],order=[1,2,3,4,5,6,0];
   const dow=new Date().getDay();
-  const LABEL={0:'80 min',1:'School',2:'Football',3:'Clear',4:'Taekwondo',5:'Football',6:'Clear'};
+  const LABEL={0:'Full match',1:'Touch + football',2:'Football',3:'Clear',4:'Taekwondo',5:'Football',6:'Clear'};
   $('weekgrid').innerHTML=order.map(d=>{
     const s=SCHED[d];
     return '<div class="wd '+(s.k==='rest'?'':s.k)+(d===dow?' now':'')+'"><b>'+names[d]+'</b>'+LABEL[d]+'</div>';
@@ -441,7 +451,7 @@ function drawPlan(){
   $('caplabel').textContent=left===1?'day to go':'days to go';
   $('capbar').style.width=Math.min(100,Math.max(0,(total-left)/total*100))+'%';
   $('captext').textContent=left>0
-    ? 'Eighty minutes on Sundays, training still twice a week, until Liam reviews you.'
+    ? 'Full training and full matches. The job now is holding it \u2014 and sorting out Christmas before the break starts.'
     : 'Review time. Take your scores to Liam and let him set the next block.';
   const last7=[];for(let i=0;i<7;i++){const e=db.entries[key(dayBack(i))];if(e&&e.l!==undefined)last7.push(e);}
   const greens=last7.filter(e=>band(Math.max(e.l,e.r))==='green').length;
@@ -577,7 +587,10 @@ const WEEKS=[
  {t:48,l:4,ti:'Rest week',tx:'Pain settles fast. Good sign — but the ceiling is still low, so going straight back at 100% would just repeat the whole thing.'},
  {t:58,l:34,ti:'September · capped',tx:'Two sessions a week and forty capped minutes. Less football than you wanted, on purpose — and the ceiling starts climbing again.'},
  {t:70,l:52,ti:'Late September · 60 minutes',tx:'Sixty minutes with no pain, two goals and an assist, a full session sprinting freely. The gap closes because you let it.'},
- {t:80,l:66,ti:'October · full games',tx:'Eighty minutes, a hat-trick for school, and harder exercises on purpose. The ceiling is nearly back where it started — and this time you know how it got there.'}
+ {t:80,l:66,ti:'October · full games',tx:'Eighty minutes, a hat-trick for school, and harder exercises on purpose. The ceiling is nearly back where it started — and this time you know how it got there.'},
+ {t:76,l:12,ti:'Half term · Italy',tx:'A week with no football. Plenty of walking and stairs, which is real work — but not sprinting work. The ceiling dips a little and your thighs arrive home tired from the hills.'},
+ {t:74,l:82,ti:'1 November · the tournament',tx:'On, off, sitting, back on cold, again and again. Legs go stiff between bouts, and a stiff leg asked to sprint feels like a dead weight. That was the pattern, not the amount — and not the bump.',ouch:1},
+ {t:84,l:72,ti:'Now · everything back',tx:'Three sessions a week and full matches. More football than at any point since the summer, because regular football is what holds the ceiling up. The gaps were always the problem.'}
 ];
 const CX0=30,CX1=326,CY0=158,CTOP=20;
 const cpx=i=>CX0+(CX1-CX0)*(i/(WEEKS.length-1)),cpy=v=>CY0-(CY0-CTOP)*(v/100);
